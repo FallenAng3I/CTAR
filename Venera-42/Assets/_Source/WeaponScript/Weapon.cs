@@ -9,7 +9,6 @@ public abstract class Weapon : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform shootPoint;
     public Object modelPrefab;
-
-
+    
     public abstract void Shoot();
 }

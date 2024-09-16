@@ -28,7 +28,7 @@ public class PlayerInventory : MonoBehaviour
 
             // Привязываем визуальную модель к игроку
             
-             weaponModel = (GameObject)Instantiate(weapon.modelPrefab, weaponHoldPoint.position, Quaternion.identity);
+            weaponModel = (GameObject)Instantiate(weapon.modelPrefab, weaponHoldPoint.position, Quaternion.identity);
             weaponModel.transform.SetParent(weaponHoldPoint);
         
             // Здесь можно добавить дополнительную логику для анимаций
