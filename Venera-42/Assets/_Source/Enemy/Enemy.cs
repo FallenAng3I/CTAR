@@ -29,6 +29,7 @@ public abstract class Enemy : MonoBehaviour
     protected bool IsPlayerInRange()
     {
         return Vector3.Distance(transform.position, player.position) <= detectionRange;
+      
     }
 
     protected abstract void PerformAttack();

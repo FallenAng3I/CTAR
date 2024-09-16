@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MeleeEnemy : Enemy
 {
-    public float attackRange = 2.0f;
+    public float attackRange = 1.0f;
 
     protected override void Update()
     {
