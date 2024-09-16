@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
     public Camera mainCamera;
     public LayerMask groundLayer;
     public Transform player;
+    
 
     void Update()
     {

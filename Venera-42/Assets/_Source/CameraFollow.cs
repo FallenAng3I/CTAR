@@ -2,29 +2,25 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform player;
-    public float followAxis = 0; // Ось, по которой будет следовать камера (1 - X, 2 - Y, 3 - Z)
-    public float offset = 0f;
+    public Transform player; // Ссылка на объект игрока
+    public Vector3 offset; // Смещение камеры относительно игрока
+    public float smoothSpeed = 0.125f; // Скорость сглаживания камеры
 
-    private void LateUpdate()
+    void LateUpdate()
     {
-            Vector3 newPosition = transform.position;
-            
-            switch (followAxis)
-            {
-                case 1:
-                    newPosition.x = player.position.x + offset;
-                    break;
-                case 2:
-                    newPosition.y = player.position.y + offset;
-                    break;
-                case 3:
-                    newPosition.z = player.position.z + offset;
-                    break;
-                default:
-                    Debug.LogWarning("Выберите корректную ось для следования (1, 2 или 3).");
-                    return;
-            }
-            transform.position = newPosition;
+        // Если игрок не задан, выходим из метода
+        if (player == null) return;
+
+        // Определяем желаемую позицию камеры
+        Vector3 desiredPosition = player.position + offset;
+        
+        // Плавно перемещаем камеру к желаемой позиции
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        
+        // Обновляем позицию камеры
+        transform.position = smoothedPosition;
+
+        // Опционально: заставляем камеру смотреть на игрока
+        transform.LookAt(player);
     }
 }
