@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class WeaponPickup : MonoBehaviour
 {
+    public float moveDistance = -10f;
     public Weapon1 weapon; // Ссылка на ScriptableObject оружия
     public int ammoAmount = 10; // Количество патронов для данного оружия
 
@@ -24,7 +25,10 @@ public class WeaponPickup : MonoBehaviour
 
             // Удаляем префаб оружия с пола
             
-            GetComponent<Renderer>().enabled = false;
+            DontDestroyOnLoad(weapon);
+            Vector3 newPosition = new Vector3(other.transform.position.x, other.transform.position.y + moveDistance, other.transform.position.z);
+            other.transform.position = newPosition; // Перемещение объекта
+            
         }
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8036113568839659843}
   - component: {fileID: 3607997418073168002}
   - component: {fileID: -7907966488499645913}
+  - component: {fileID: 397679872064397895}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
@@ -120,3 +121,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 50c2cf805075dda4ca7dda2ab9601180, type: 2}
   ammoAmount: 4
+--- !u!114 &397679872064397895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3009391276272695818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8ba86f526fb63499f457def8b0aed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: 
+  modelPrefab: {fileID: 0}
+  currentAmmo: 0
+  maxAmmo: 0
+  projectile: {fileID: 0}
+  projectileSpeed: 0
+  fireRate: 0
+  shootPoint: {fileID: 0}
+  inventory: {fileID: 0}
