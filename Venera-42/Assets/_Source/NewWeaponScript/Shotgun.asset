@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab8526576604ae24687a98f0db937f98, type: 3}
+  m_Script: {fileID: 11500000, guid: da8ba86f526fb63499f457def8b0aed7, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
-  weaponName: Berdanka
-  modelPrefab: {fileID: 3009391276272695818, guid: 055f7750f9eca0e41a619e6de9976df9, type: 3}
-  currentAmmo: 4
-  maxAmmo: 4
+  weaponName: 
+  modelPrefab: {fileID: 0}
+  currentAmmo: 0
+  maxAmmo: 0

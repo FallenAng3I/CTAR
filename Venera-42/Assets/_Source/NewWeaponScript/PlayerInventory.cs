@@ -32,18 +32,28 @@ public class PlayerInventory : MonoBehaviour
 
     public void EquipWeapon(Weapon weapon)
     {
-        currentWeapon = weapon;
-
-        // Привязываем модель оружия к игроку
+        // Проверяем и уничтожаем предыдущую модель оружия, если она существует
         if (weaponModel != null)
         {
-            Destroy(weaponModel); // Удаляем старую модель
+            Destroy(weaponModel);
+            weaponModel = null;  // Обязательно обнуляем ссылку на старую модель
         }
 
-        weaponModel = Instantiate(weapon.modelPrefab, weaponHoldPoint.position, Quaternion.identity);
-        weaponModel.transform.SetParent(weaponHoldPoint);
+        // Проверяем, что оружие есть в инвентаре
+        if (weapons.Contains(weapon))
+        {
+            currentWeapon = weapon;
 
-        Debug.Log("Weapon equipped: " + weapon.weaponName);
+            // Создаём новую модель оружия и помещаем её в точку для оружия
+            weaponModel = Instantiate(weapon.modelPrefab, weaponHoldPoint.position, weaponHoldPoint.rotation);
+            weaponModel.transform.SetParent(weaponHoldPoint);
+
+            // Убедимся, что модель правильно ориентирована
+            weaponModel.transform.localRotation = Quaternion.identity;
+            weaponModel.transform.localPosition = Vector3.zero;
+
+            Debug.Log("Weapon equipped: " + weapon.weaponName);
+        }
     }
 
     void Update()

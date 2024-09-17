@@ -3,7 +3,6 @@ using UnityEngine;
 public class WeaponSwitcher : MonoBehaviour
 {
     private PlayerInventory inventory;
-    private WeaponEquipper weaponEquipper;
     private WeaponController weaponController;
 
     private int currentWeaponIndex = 0;
@@ -11,7 +10,6 @@ public class WeaponSwitcher : MonoBehaviour
     void Start()
     {
         inventory = GetComponent<PlayerInventory>();
-        weaponEquipper = GetComponent<WeaponEquipper>();
         weaponController = GetComponent<WeaponController>();
 
         if (inventory.weapons.Count > 0)
@@ -42,8 +40,16 @@ public class WeaponSwitcher : MonoBehaviour
 
     void EquipWeaponAtIndex(int index)
     {
+        // Деактивируем текущую модель оружия
+        if (inventory.weaponModel != null)
+        {
+            Destroy(inventory.weaponModel);  // Удаляем текущую модель оружия
+        }
+
         Weapon weaponToEquip = inventory.weapons[index];
-        weaponEquipper.EquipWeapon(weaponToEquip);
+
+        // Экипируем новое оружие
+        inventory.EquipWeapon(weaponToEquip);
         weaponController.SetCurrentWeapon(weaponToEquip);
     }
 }
