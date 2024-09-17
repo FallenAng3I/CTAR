@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class WeaponPickup : MonoBehaviour
 {
-    public Weapon weapon; // Ссылка на ScriptableObject оружия
+    public Weapon1 weapon; // Ссылка на ScriptableObject оружия
     public int ammoAmount = 10; // Количество патронов для данного оружия
 
     void OnTriggerEnter(Collider other)
@@ -23,7 +23,8 @@ public class WeaponPickup : MonoBehaviour
             }
 
             // Удаляем префаб оружия с пола
-            Destroy(gameObject);
+            
+            GetComponent<Renderer>().enabled = false;
         }
     }
 }

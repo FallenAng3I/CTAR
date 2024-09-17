@@ -3,12 +3,13 @@ using System.Collections.Generic;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public List<Weapon> weapons = new List<Weapon>();
-    public Weapon currentWeapon;
+    
+    public List<Weapon1> weapons = new List<Weapon1>();
+    public Weapon1 currentWeapon;
     public Transform weaponHoldPoint;
     public GameObject weaponModel;
 
-    public void PickupWeapon(Weapon newWeapon)
+    public void PickupWeapon(Weapon1 newWeapon)
     {
         weapons.Add(newWeapon);
         Debug.Log("Weapon picked up: " + newWeapon.weaponName);
@@ -19,18 +20,18 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public bool HasWeapon(Weapon weapon)
+    public bool HasWeapon(Weapon1 weapon)
     {
         return weapons.Contains(weapon);
     }
 
-    public void AddAmmo(Weapon weapon, int ammoAmount)
+    public void AddAmmo(Weapon1 weapon, int ammoAmount)
     {
         weapon.currentAmmo += ammoAmount; // Добавляем патроны
         Debug.Log(weapon.weaponName + " ammo added: " + ammoAmount);
     }
 
-    public void EquipWeapon(Weapon weapon)
+    public void EquipWeapon(Weapon1 weapon)
     {
         // Проверяем и уничтожаем предыдущую модель оружия, если она существует
         if (weaponModel != null)
@@ -47,6 +48,7 @@ public class PlayerInventory : MonoBehaviour
             // Создаём новую модель оружия и помещаем её в точку для оружия
             weaponModel = Instantiate(weapon.modelPrefab, weaponHoldPoint.position, weaponHoldPoint.rotation);
             weaponModel.transform.SetParent(weaponHoldPoint);
+            
 
             // Убедимся, что модель правильно ориентирована
             weaponModel.transform.localRotation = Quaternion.identity;
@@ -58,9 +60,10 @@ public class PlayerInventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && currentWeapon != null)
+        if (Input.GetButtonDown("Fire1") && currentWeapon != null ) 
         {
             currentWeapon.Shoot();
+           
         }
     }
 }

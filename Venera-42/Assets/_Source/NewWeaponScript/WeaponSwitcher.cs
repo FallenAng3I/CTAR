@@ -3,14 +3,14 @@ using UnityEngine;
 public class WeaponSwitcher : MonoBehaviour
 {
     private PlayerInventory inventory;
-    private WeaponController weaponController;
+    
 
     private int currentWeaponIndex = 0;
 
     void Start()
     {
         inventory = GetComponent<PlayerInventory>();
-        weaponController = GetComponent<WeaponController>();
+      
 
         if (inventory.weapons.Count > 0)
         {
@@ -46,10 +46,10 @@ public class WeaponSwitcher : MonoBehaviour
             Destroy(inventory.weaponModel);  // Удаляем текущую модель оружия
         }
 
-        Weapon weaponToEquip = inventory.weapons[index];
+        Weapon1 weaponToEquip = inventory.weapons[index];
 
         // Экипируем новое оружие
         inventory.EquipWeapon(weaponToEquip);
-        weaponController.SetCurrentWeapon(weaponToEquip);
+        
     }
 }
