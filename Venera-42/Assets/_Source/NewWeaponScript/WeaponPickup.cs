@@ -26,13 +26,8 @@ public class WeaponPickup : MonoBehaviour
             // Удаляем префаб оружия с пола
 
             DontDestroyOnLoad(weapon);
-<<<<<<< Updated upstream
             GetComponent<Collider>().enabled = false;
             GetComponent<Renderer>().enabled = false;
-
-=======
-            gameObject.SetActive(false);
->>>>>>> Stashed changes
         }
     }
 }
