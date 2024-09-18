@@ -766,6 +766,26 @@ PrefabInstance:
       propertyPath: ammoAmount
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3325727577484382211, guid: 84a850df736a54541b52bff671f05c82, type: 3}
+      propertyPath: fireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325727577484382211, guid: 84a850df736a54541b52bff671f05c82, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1360607461}
+    - target: {fileID: 3325727577484382211, guid: 84a850df736a54541b52bff671f05c82, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 423038715591290101, guid: 1dd331926f29c3c49b7537f6cdd48b89, type: 3}
+    - target: {fileID: 3325727577484382211, guid: 84a850df736a54541b52bff671f05c82, type: 3}
+      propertyPath: shootPoint
+      value: 
+      objectReference: {fileID: 1635863717}
+    - target: {fileID: 3325727577484382211, guid: 84a850df736a54541b52bff671f05c82, type: 3}
+      propertyPath: projectileSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6108797370639796280, guid: 84a850df736a54541b52bff671f05c82, type: 3}
       propertyPath: m_Name
       value: Pistol
@@ -1858,6 +1878,22 @@ MonoBehaviour:
   player: {fileID: 1360607455}
   offset: {x: 0, y: 13, z: -13}
   smoothSpeed: 0.125
+--- !u!1 &1102862704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3009391276272695818, guid: 055f7750f9eca0e41a619e6de9976df9, type: 3}
+  m_PrefabInstance: {fileID: 1523089032}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1102862710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 397679872064397895, guid: 055f7750f9eca0e41a619e6de9976df9, type: 3}
+  m_PrefabInstance: {fileID: 1523089032}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102862704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8ba86f526fb63499f457def8b0aed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1115003725
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,6 +2783,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7907966488499645913, guid: 055f7750f9eca0e41a619e6de9976df9, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 1102862710}
+    - target: {fileID: 397679872064397895, guid: 055f7750f9eca0e41a619e6de9976df9, type: 3}
+      propertyPath: maxAmmo
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 397679872064397895, guid: 055f7750f9eca0e41a619e6de9976df9, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1360607461}
+    - target: {fileID: 397679872064397895, guid: 055f7750f9eca0e41a619e6de9976df9, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 423038715591290101, guid: 1dd331926f29c3c49b7537f6cdd48b89, type: 3}
+    - target: {fileID: 397679872064397895, guid: 055f7750f9eca0e41a619e6de9976df9, type: 3}
+      propertyPath: shootPoint
+      value: 
+      objectReference: {fileID: 1635863717}
+    - target: {fileID: 397679872064397895, guid: 055f7750f9eca0e41a619e6de9976df9, type: 3}
+      propertyPath: weaponName
+      value: Shot
+      objectReference: {fileID: 0}
+    - target: {fileID: 397679872064397895, guid: 055f7750f9eca0e41a619e6de9976df9, type: 3}
+      propertyPath: currentAmmo
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 397679872064397895, guid: 055f7750f9eca0e41a619e6de9976df9, type: 3}
+      propertyPath: modelPrefab
+      value: 
+      objectReference: {fileID: 1102862704}
+    - target: {fileID: 397679872064397895, guid: 055f7750f9eca0e41a619e6de9976df9, type: 3}
+      propertyPath: projectileSpeed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3009391276272695818, guid: 055f7750f9eca0e41a619e6de9976df9, type: 3}
       propertyPath: m_Name
       value: Shotgun
