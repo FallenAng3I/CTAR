@@ -15,6 +15,21 @@ public abstract class Weapon1 : MonoBehaviour
     private float nextFireTime ;// интервал
     public Transform shootPoint;//точка для пули
     public PlayerInventory inventory;
+    public bool scope;
 
     public abstract void Shoot();
+
+    public void Scope()
+    {
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            scope = true;
+            
+        }
+        else
+        {
+            scope = false;
+           
+        }
+    }
 }

@@ -7,7 +7,7 @@ public class Pistol1 : Weapon1
     
     public override void Shoot()
     {
-        if (inventory.currentWeapon.currentAmmo > 0)
+        if (inventory.currentWeapon.currentAmmo > 0 && scope)
         {
             GameObject newProjectile = Instantiate(projectile, shootPoint.position, shootPoint.rotation);
             Rigidbody rb = newProjectile.GetComponent<Rigidbody>();
@@ -20,4 +20,5 @@ public class Pistol1 : Weapon1
             Debug.Log("Out of ammo!");
         }
     }
+    
 }

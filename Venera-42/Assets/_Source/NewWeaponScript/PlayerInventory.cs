@@ -60,10 +60,14 @@ public class PlayerInventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && currentWeapon != null ) 
+        if (Input.GetButtonDown("Fire1") && currentWeapon != null && currentWeapon.scope ) 
         {
             currentWeapon.Shoot();
-           
+        }
+
+        if (currentWeapon != null)
+        {
+            currentWeapon.Scope();
         }
     }
 }
