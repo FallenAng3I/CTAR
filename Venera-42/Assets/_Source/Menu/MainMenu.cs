@@ -4,8 +4,14 @@ using UnityEngine.UI;              // Если вам нужно управля�
 
 public class MainMenu : MonoBehaviour
 {
-    void StartGame()
+    public void StartGame()
     {
         SceneManager.LoadScene("Debug_Room");
+    }
+
+    public void QuitGame()
+    {
+        UnityEditor.EditorApplication.isPlaying = false;
+        //Application.Quit();
     }
 }
