@@ -114,7 +114,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4615713036791152563}
-  - component: {fileID: 3280192417217234299}
+  - component: {fileID: 3232551358430043221}
+  - component: {fileID: 4902675032653883710}
   m_Layer: 0
   m_Name: PivotPlayer
   m_TagString: Untagged
@@ -138,7 +139,7 @@ Transform:
   - {fileID: 2376728614612295020}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3280192417217234299
+--- !u!114 &3232551358430043221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,9 +148,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1913500224405402591}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb7136f9fb204a145860facd4597c411, type: 3}
+  m_Script: {fileID: 11500000, guid: 4aeea13e0b43b12449dc88e65eb3eafe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponinv: {fileID: 6103111069118088332}
+  moveSpeed: 15
+--- !u!114 &4902675032653883710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913500224405402591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 269bb6581fd3eab4cb206b8fc51864d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponinv: {fileID: 6103111069118088332}
   moveSpeed: 5
 --- !u!1 &2872083128139649482
 GameObject:
@@ -375,6 +391,7 @@ GameObject:
   - component: {fileID: 7498379775704872908}
   - component: {fileID: 4551916131736847511}
   - component: {fileID: 6581350305392953674}
+  - component: {fileID: 6103111069118088332}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -515,3 +532,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   player: {fileID: 2376728614612295020}
+--- !u!114 &6103111069118088332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9034643293162673869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01eac66ae1e26c24385c56eb2aa078e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons: []
+  currentWeapon: {fileID: 0}
+  weaponHoldPoint: {fileID: 0}
+  weaponModel: {fileID: 0}
