@@ -24,11 +24,11 @@ public class WeaponPickup : MonoBehaviour
             }
 
             // Удаляем префаб оружия с пола
-            
+
             DontDestroyOnLoad(weapon);
-            Vector3 newPosition = new Vector3(other.transform.position.x, other.transform.position.y + moveDistance, other.transform.position.z);
-            other.transform.position = newPosition; // Перемещение объекта
-            
+            GetComponent<Collider>().enabled = false;
+            GetComponent<Renderer>().enabled = false;
+
         }
     }
 }
