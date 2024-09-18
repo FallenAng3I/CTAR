@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MeleeEnemy : Enemy
 {
-    public float attackRange = 1.0f;
+    
+    
 
     protected override void Update()
     {
@@ -17,7 +18,10 @@ public class MeleeEnemy : Enemy
 
     protected override void PerformAttack()
     {
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.isKinematic = true;
         // Логика атаки ближнего боя
         Debug.Log("МeleeEnemy атакует в ближнем бою!");
+        rb.isKinematic = false;
     }
 }
