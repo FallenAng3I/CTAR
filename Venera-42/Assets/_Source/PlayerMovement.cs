@@ -1,17 +1,15 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Playerwalk : PlayerMovement
+public class PlayerMovement : MonoBehaviour
 {
+    public float moveSpeed = 5f;
+
     private void Update()
     {
         MovePlayer();
     }
 
-    protected override void MovePlayer()
+    private void MovePlayer()
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
