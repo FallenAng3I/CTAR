@@ -46,7 +46,7 @@ public class WeaponSwitcher : MonoBehaviour
             Destroy(inventory.weaponModel);  // Удаляем текущую модель оружия
         }
 
-        Weapon1 weaponToEquip = inventory.weapons[index];
+        Weapon weaponToEquip = inventory.weapons[index];
 
         // Экипируем новое оружие
         inventory.EquipWeapon(weaponToEquip);

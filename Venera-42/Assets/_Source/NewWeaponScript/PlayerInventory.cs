@@ -4,12 +4,12 @@ using System.Collections.Generic;
 public class PlayerInventory : MonoBehaviour
 {
     
-    public List<Weapon1> weapons = new List<Weapon1>();
-    public Weapon1 currentWeapon;
+    public List<Weapon> weapons = new List<Weapon>();
+    public Weapon currentWeapon;
     public Transform weaponHoldPoint;
     public GameObject weaponModel;
 
-    public void PickupWeapon(Weapon1 newWeapon)
+    public void PickupWeapon(Weapon newWeapon)
     {
         weapons.Add(newWeapon);
         Debug.Log("Weapon picked up: " + newWeapon.weaponName);
@@ -20,18 +20,18 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public bool HasWeapon(Weapon1 weapon)
+    public bool HasWeapon(Weapon weapon)
     {
         return weapons.Contains(weapon);
     }
 
-    public void AddAmmo(Weapon1 weapon, int ammoAmount)
+    public void AddAmmo(Weapon weapon, int ammoAmount)
     {
         weapon.currentAmmo += ammoAmount; // Добавляем патроны
         Debug.Log(weapon.weaponName + " ammo added: " + ammoAmount);
     }
 
-    public void EquipWeapon(Weapon1 weapon)
+    public void EquipWeapon(Weapon weapon)
     {
         // Проверяем и уничтожаем предыдущую модель оружия, если она существует
         if (weaponModel != null)
