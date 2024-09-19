@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3017e9d653ddb97478ec96e9b80774b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 30
   currentHealth: 0
 --- !u!114 &5930860380181778637
 MonoBehaviour:
@@ -184,9 +184,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81e4c60b82b4d2478a551d8471ea622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 2
+  attackRange: 5
   speed: 4
   detectionRange: 10
   health: {fileID: 0}
   attackCooldown: 1
-  damage: 10
+  damage: 20

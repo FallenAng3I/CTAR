@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 885c259bb23c95946b70f62c843b3dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveDistance: -10
   weapon: {fileID: 3325727577484382211}
   ammoAmount: 10
 --- !u!65 &8908218799060669605
@@ -115,7 +116,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -133,12 +134,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e16f0408b1ece994180fe22276bbb6b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Pistol
+  weaponName: Gurza
   modelPrefab: {fileID: 6108797370639796280}
-  currentAmmo: 5
-  maxAmmo: 9
-  projectile: {fileID: 0}
-  projectileSpeed: 0
+  currentAmmo: 18
+  maxAmmo: 18
+  projectile: {fileID: 423038715591290101, guid: 1dd331926f29c3c49b7537f6cdd48b89, type: 3}
+  projectileSpeed: 42
   fireRate: 0
   shootPoint: {fileID: 0}
   inventory: {fileID: 0}
+  scope: 0
