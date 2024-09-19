@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MeleeEnemy : Enemy
 {
-    public float attackRange = 1.0f;
+    public PlayerHealth playerHealth;
+    public float attackCooldown ; // Time in seconds between attacks
+    private bool canAttack = true; // To check if the enemy can attack
+    
+    public float damage;
 
     protected override void Update()
     {
@@ -17,7 +22,19 @@ public class MeleeEnemy : Enemy
 
     protected override void PerformAttack()
     {
-        // Логика атаки ближнего боя
-        Debug.Log("МeleeEnemy атакует в ближнем бою!");
+        if (canAttack)
+        {
+            Debug.Log("MeleeEnemy атакует в ближнем бою!");
+            playerHealth.currentHealth -= damage;
+            
+            StartCoroutine(AttackCooldown());
+        }
+    }
+
+    private IEnumerator AttackCooldown()
+    {
+        canAttack = false; // Disable attacking
+        yield return new WaitForSeconds(attackCooldown); // Wait for the cooldown period
+        canAttack = true; // Allow attacking again
     }
 }

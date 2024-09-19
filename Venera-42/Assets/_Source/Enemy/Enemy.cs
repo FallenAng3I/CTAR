@@ -5,8 +5,10 @@ using UnityEngine.AI;
 
 public abstract class Enemy : MonoBehaviour
 {
-    public float speed = 3.0f;
-    public float detectionRange = 10.0f;
+
+    public float attackRange ;
+    public float speed  ;
+    public float detectionRange ;
     protected Transform player;
     protected NavMeshAgent agent;
 
