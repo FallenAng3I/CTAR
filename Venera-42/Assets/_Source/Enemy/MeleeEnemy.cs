@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class MeleeEnemy : Enemy
 {
-    public PlayerHealth playerHealth;
+    [FormerlySerializedAs("playerHealth")] public Health health;
     public float attackCooldown ; // Time in seconds between attacks
     private bool canAttack = true; // To check if the enemy can attack
     
@@ -25,7 +26,7 @@ public class MeleeEnemy : Enemy
         if (canAttack)
         {
             Debug.Log("MeleeEnemy атакует в ближнем бою!");
-            playerHealth.currentHealth -= damage;
+            health.currentHealth -= damage;
             
             StartCoroutine(AttackCooldown());
         }
