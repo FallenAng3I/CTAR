@@ -16,7 +16,7 @@ public class PlayerWalk : PlayerMovement
             }
             else
             {
-                moveSpeed = 5f;
+                moveSpeed = 1.5f;
             }
         }
 

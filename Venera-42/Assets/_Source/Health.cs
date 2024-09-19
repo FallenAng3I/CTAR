@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public abstract class Health : MonoBehaviour
 {
+   
     public float maxHealth ; // Максимальное здоровье
     public float currentHealth; // Текущее здоровье
     
@@ -15,18 +16,12 @@ public abstract class Health : MonoBehaviour
         currentHealth = maxHealth; // Устанавливаем текущее здоровье равным максимальному
     }
 
-    private void Update()
-    {
-        if (currentHealth == 0)
-        {
-            Die();
-        }
-    }
+   
 
-    private void Die()
+    public void Die()
     {
         Debug.Log("Игрок погиб!");
-  
+        gameObject.SetActive(false);
     }
 }
 

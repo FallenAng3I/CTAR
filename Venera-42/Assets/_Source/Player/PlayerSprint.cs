@@ -16,7 +16,7 @@ public class PlayerSprint : PlayerMovement
             }
             else
             {
-                moveSpeed = 15f;
+                moveSpeed = 3f;
             }
         }
         if (Input.GetKey(KeyCode.LeftShift))
