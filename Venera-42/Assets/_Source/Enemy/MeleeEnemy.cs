@@ -4,16 +4,8 @@ using UnityEngine;
 
 public class MeleeEnemy : Enemy
 {
-    public int damageAmount = 10;
-    private bool canAttack = true;
-    public float attackCooldown = 1f; 
+    public float attackRange = 1.0f;
 
-    private PlayerHealth playerHealth;
-
-    void Start()
-    {
-        playerHealth = FindObjectOfType<PlayerHealth>(); 
-    }
     protected override void Update()
     {
         base.Update();
@@ -22,21 +14,10 @@ public class MeleeEnemy : Enemy
             PerformAttack();
         }
     }
-    
+
     protected override void PerformAttack()
     {
-        if (canAttack && playerHealth != null)
-        {
-            playerHealth.TakeDamage(damageAmount);
-            Debug.Log("МeleeEnemy атакует в ближнем бою!");
-            StartCoroutine(AttackCooldown());
-        }
-    }
-
-    private IEnumerator AttackCooldown()
-    {
-        canAttack = false;
-        yield return new WaitForSeconds(attackCooldown);
-        canAttack = true;
+        // Логика атаки ближнего боя
+        Debug.Log("МeleeEnemy атакует в ближнем бою!");
     }
 }
