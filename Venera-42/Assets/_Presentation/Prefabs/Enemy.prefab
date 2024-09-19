@@ -14,10 +14,11 @@ GameObject:
   - component: {fileID: 826367489560563950}
   - component: {fileID: 3057317070426763634}
   - component: {fileID: 7566824937383156190}
+  - component: {fileID: 2543870093286989722}
   - component: {fileID: 5930860380181778637}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,6 +158,20 @@ NavMeshAgent:
   m_BaseOffset: 0.50000006
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2543870093286989722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5766383629191305662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3017e9d653ddb97478ec96e9b80774b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
 --- !u!114 &5930860380181778637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +184,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81e4c60b82b4d2478a551d8471ea622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 0
+  attackRange: 2
   speed: 4
   detectionRange: 10
-  waypoints: []
+  health: {fileID: 0}
+  attackCooldown: 1
+  damage: 10
