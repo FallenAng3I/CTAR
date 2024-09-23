@@ -11,7 +11,7 @@ public class Pistol1 : Weapon1
         {
             GameObject newProjectile = Instantiate(projectile, shootPoint.position, shootPoint.rotation);
             Rigidbody rb = newProjectile.GetComponent<Rigidbody>();
-            rb.velocity = shootPoint.forward * projectileSpeed; // Двигаем снаряд в направлении стрельбы
+            rb.velocity = shootPoint.forward * projectileSpeed; 
             Debug.Log("Firing " + inventory.currentWeapon.weaponName);
             inventory.currentWeapon.currentAmmo--;
         }

@@ -11,7 +11,7 @@ public abstract class Weapon1 : MonoBehaviour
     public int maxAmmo;     // Максимальные патроны для этого оружия
     public GameObject projectile; //пуля
     public float projectileSpeed;// скорость пули
-    public float fireRate ; // Интервал между выстрелами
+
     private float nextFireTime ;// интервал
     public Transform shootPoint;//точка для пули
     public PlayerInventory inventory;

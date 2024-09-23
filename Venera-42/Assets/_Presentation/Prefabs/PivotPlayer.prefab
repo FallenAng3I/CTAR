@@ -309,8 +309,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aeea13e0b43b12449dc88e65eb3eafe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 3
   weaponinv: {fileID: 6103111069118088332}
-  moveSpeed: 4
+  Sprint: 3
 --- !u!114 &4902675032653883710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,8 +324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269bb6581fd3eab4cb206b8fc51864d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponinv: {fileID: 6103111069118088332}
   moveSpeed: 2
+  weaponinv: {fileID: 6103111069118088332}
 --- !u!114 &2928635938106396991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,6 +340,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  lightSource: {fileID: 0}
+  lightThreshold: 50
+  healthyColor: {r: 0, g: 0, b: 0, a: 1}
+  midHealthColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &2762875165766636270
 GameObject:
   m_ObjectHideFlags: 0

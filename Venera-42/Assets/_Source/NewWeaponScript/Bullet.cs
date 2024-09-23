@@ -9,26 +9,26 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        // Уничтожить пулю через заданное время
+     
         Destroy(gameObject, lifespan);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Проверяем, попала ли пуля во врага
+       
         if (other.CompareTag("Enemy"))
         {
-            // Получаем компонент здоровья врага и наносим урон
+            
             other.GetComponent<EnemyHealth>().TakeDamage(damageAmount);
-            Destroy(gameObject); // Уничтожаем пулю
+            Destroy(gameObject); 
         }
         else if (other.CompareTag("Player"))
         {
-            Destroy(gameObject); // Уничтожаем пулю
+            Destroy(gameObject); 
         }
         else if (other.CompareTag("Obstacle"))
         {
-            // Уничтожаем пулю, если она попадает в препятствие
+           
             Destroy(gameObject);
         }
     }

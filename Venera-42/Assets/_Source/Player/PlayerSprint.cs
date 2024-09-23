@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerSprint : PlayerMovement
 {
-    public float moveSpeed =15f;
+    
 
     public override void MovePlayer()
     {

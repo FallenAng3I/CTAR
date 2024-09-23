@@ -7,8 +7,8 @@ using UnityEngine.Serialization;
 public class MeleeEnemy : Enemy
 {
     [FormerlySerializedAs("playerHealth")] public Health health;
-    public float attackCooldown ; // Time in seconds between attacks
-    private bool canAttack = true; // To check if the enemy can attack
+    public float attackCooldown ; 
+    private bool canAttack = true; 
     
     public float damage;
 
@@ -34,8 +34,8 @@ public class MeleeEnemy : Enemy
 
     private IEnumerator AttackCooldown()
     {
-        canAttack = false; // Disable attacking
-        yield return new WaitForSeconds(attackCooldown); // Wait for the cooldown period
-        canAttack = true; // Allow attacking again
+        canAttack = false; 
+        yield return new WaitForSeconds(attackCooldown); 
+        canAttack = true; 
     }
 }
