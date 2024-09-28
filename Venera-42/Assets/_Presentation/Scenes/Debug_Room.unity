@@ -4346,41 +4346,9 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.5283019
       objectReference: {fileID: 0}
-    - target: {fileID: 2928635938106396991, guid: 78bdf555b1df87147899051a843d7701, type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2928635938106396991, guid: 78bdf555b1df87147899051a843d7701, type: 3}
-      propertyPath: lightSource
-      value: 
-      objectReference: {fileID: 2070846577}
-    - target: {fileID: 2928635938106396991, guid: 78bdf555b1df87147899051a843d7701, type: 3}
-      propertyPath: healthyColor.b
-      value: 0.5647059
-      objectReference: {fileID: 0}
-    - target: {fileID: 2928635938106396991, guid: 78bdf555b1df87147899051a843d7701, type: 3}
-      propertyPath: healthyColor.g
-      value: 0.9843137
-      objectReference: {fileID: 0}
-    - target: {fileID: 2928635938106396991, guid: 78bdf555b1df87147899051a843d7701, type: 3}
-      propertyPath: healthyColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2928635938106396991, guid: 78bdf555b1df87147899051a843d7701, type: 3}
-      propertyPath: midHealthColor.b
-      value: 0.29076186
-      objectReference: {fileID: 0}
-    - target: {fileID: 2928635938106396991, guid: 78bdf555b1df87147899051a843d7701, type: 3}
-      propertyPath: midHealthColor.g
-      value: 0.49931026
-      objectReference: {fileID: 0}
-    - target: {fileID: 2928635938106396991, guid: 78bdf555b1df87147899051a843d7701, type: 3}
-      propertyPath: midHealthColor.r
-      value: 0.509434
-      objectReference: {fileID: 0}
     - target: {fileID: 3232551358430043221, guid: 78bdf555b1df87147899051a843d7701, type: 3}
       propertyPath: moveSpeed
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3833241919705903650, guid: 78bdf555b1df87147899051a843d7701, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4454,6 +4422,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 4902675032653883710, guid: 78bdf555b1df87147899051a843d7701, type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6103111069118088332, guid: 78bdf555b1df87147899051a843d7701, type: 3}
       propertyPath: weaponHoldPoint
       value: 
@@ -4462,6 +4434,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eye
       objectReference: {fileID: 0}
+    - target: {fileID: 6581350305392953674, guid: 78bdf555b1df87147899051a843d7701, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1221099319}
     - target: {fileID: 6581350305392953674, guid: 78bdf555b1df87147899051a843d7701, type: 3}
       propertyPath: mainCamera
       value: 
@@ -4483,7 +4459,7 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 3280192417217234299, guid: 78bdf555b1df87147899051a843d7701, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects:
     - {fileID: 2872083128139649482, guid: 78bdf555b1df87147899051a843d7701, type: 3}
     - {fileID: 5519515648835415205, guid: 78bdf555b1df87147899051a843d7701, type: 3}
@@ -30387,11 +30363,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1431794672}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!108 &2070846577 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 2854531249723851996, guid: 78bdf555b1df87147899051a843d7701, type: 3}
-  m_PrefabInstance: {fileID: 278736639}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2094846679
 GameObject:
   m_ObjectHideFlags: 0
