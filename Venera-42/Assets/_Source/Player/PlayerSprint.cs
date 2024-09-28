@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSprint : PlayerMovement
+public class PlayerSprint : APlayerMovement
 {
-    
-
     public override void MovePlayer()
     {
         if (weaponinv.currentWeapon != null)

@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
     public PlayerInventory inv;
-    public Weapon1 weapon;
+    public AWeapon1 weapon;
     public GameObject laser;
-  
-
+    
     void Start()
     {
         laser.GetComponent<Renderer>().enabled = false;
@@ -28,5 +25,4 @@ public class Laser : MonoBehaviour
             }
         }
     }
-
 }

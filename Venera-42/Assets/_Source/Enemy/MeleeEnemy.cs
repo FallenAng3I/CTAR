@@ -1,12 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class MeleeEnemy : Enemy
+public class MeleeEnemy : AEnemy
 {
-    [FormerlySerializedAs("playerHealth")] public Health health;
+    [FormerlySerializedAs("playerHealth")] public AHealth health;
     public float attackCooldown ; 
     private bool canAttack = true; 
     

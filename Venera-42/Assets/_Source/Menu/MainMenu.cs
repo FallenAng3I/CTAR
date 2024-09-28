@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Обязательно добавьте эту строку для работы с сценами
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {

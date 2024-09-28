@@ -1,13 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    public GameObject enemyPrefab; // Префаб врага
-    public Transform spawnPoint; // Центр радиуса спавна
-    public float spawnRadius = 5f; // Радиус спавна
-    public int numberOfEnemies = 5; // Количество врагов
+    public GameObject enemyPrefab;      // Префаб врага
+    public Transform spawnPoint;        // Центр радиуса спавна
+    public float spawnRadius = 5f;      // Радиус спавна
+    public int numberOfEnemies = 5;     // Количество врагов
 
     void Start()
     {

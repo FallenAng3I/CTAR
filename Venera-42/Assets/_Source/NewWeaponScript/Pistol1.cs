@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Pistol1 : Weapon1
+public class Pistol1 : AWeapon1
 {
-    
     public override void Shoot()
     {
         if (inventory.currentWeapon.currentAmmo > 0 && scope)
@@ -20,5 +17,4 @@ public class Pistol1 : Weapon1
             Debug.Log("Out of ammo!");
         }
     }
-    
 }

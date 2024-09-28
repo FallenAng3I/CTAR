@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class PlayerMovement : MonoBehaviour
+public abstract class APlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
     public PlayerInventory weaponinv;
@@ -30,6 +30,4 @@ public abstract class PlayerMovement : MonoBehaviour
 
           transform.Translate(move);
     }
-    
-    
 }

@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : Health
+public class PlayerHealth : AHealth
 {
-    public Light lightSource;           // Ссылка на компонент Light
-    public int lightThreshold = 50;     // Порог здоровья, при котором цвет меняется
-    public Color healthyColor = Color.HSVToRGB(255, 251, 144); // Цвет, когда здоровье высокое
-    public Color midHealthColor = Color.HSVToRGB(135,133,64); // Цвет, когда здоровье низкое
+    public Light lightSource;
+    public int lightThreshold = 50;
+    public Color healthyColor = Color.HSVToRGB(255, 251, 144);
+    public Color midHealthColor = Color.HSVToRGB(135,133,64);
    
         
     void Start()
@@ -22,11 +20,11 @@ public class PlayerHealth : Health
             
             if (currentHealth <= lightThreshold)
             {
-                lightSource.color = midHealthColor; // Меняем цвет на красный
+                lightSource.color = midHealthColor;
             }
             else
             {
-                lightSource.color = healthyColor; // Меняем цвет на зеленый
+                lightSource.color = healthyColor;
             }
         }
         if (currentHealth <= 0)

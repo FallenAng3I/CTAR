@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float damageAmount = 20f; // Урон, который наносит пуля
-    public float lifespan = 5f; // Время жизни пули
+    public float damageAmount = 20f;     // Урон, который наносит пуля
+    public float lifespan = 20f;         // Время жизни пули
 
     private void Start()
     {
