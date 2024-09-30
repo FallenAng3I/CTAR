@@ -1,10 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-<<<<<<< HEAD
 public class ShotGun : Weapon
-=======
-public class ShotGun : AWeapon1
->>>>>>> 1e1960511945aef7cd522e5675092e6a791c9a92
 {
     public override void Shoot()
     {
@@ -12,7 +10,7 @@ public class ShotGun : AWeapon1
         {
             GameObject newProjectile = Instantiate(projectile, shootPoint.position, shootPoint.rotation);
             Rigidbody rb = newProjectile.GetComponent<Rigidbody>();
-            rb.velocity = shootPoint.forward * projectileSpeed;
+            rb.velocity = shootPoint.forward * projectileSpeed; // Двигаем снаряд в направлении стрельбы
             Debug.Log("Firing " + inventory.currentWeapon.weaponName);
             inventory.currentWeapon.currentAmmo--;
         }

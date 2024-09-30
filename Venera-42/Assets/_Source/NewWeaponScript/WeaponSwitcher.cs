@@ -40,19 +40,15 @@ public class WeaponSwitcher : MonoBehaviour
 
     void EquipWeaponAtIndex(int index)
     {
+        // Деактивируем текущую модель оружия
         if (inventory.weaponModel != null)
         {
-            Destroy(inventory.weaponModel);
+            Destroy(inventory.weaponModel);  // Удаляем текущую модель оружия
         }
 
-<<<<<<< HEAD
         Weapon weaponToEquip = inventory.weapons[index];
 
         // Экипируем новое оружие
-=======
-        AWeapon1 weaponToEquip = inventory.weapons[index];
-        
->>>>>>> 1e1960511945aef7cd522e5675092e6a791c9a92
         inventory.EquipWeapon(weaponToEquip);
         
     }

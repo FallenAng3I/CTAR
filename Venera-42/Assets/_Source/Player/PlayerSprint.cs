@@ -1,7 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSprint : APlayerMovement
+public class PlayerSprint : PlayerMovement
 {
+    public float moveSpeed =15f;
+
     public override void MovePlayer()
     {
         if (weaponinv.currentWeapon != null)
@@ -12,7 +16,7 @@ public class PlayerSprint : APlayerMovement
             }
             else
             {
-                moveSpeed = 3f;
+                moveSpeed = 15f;
             }
         }
         if (Input.GetKey(KeyCode.LeftShift))

@@ -1,12 +1,14 @@
 using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class MeleeEnemy : AEnemy
+public class MeleeEnemy : Enemy
 {
-    [FormerlySerializedAs("playerHealth")] public AHealth health;
-    public float attackCooldown ; 
-    private bool canAttack = true; 
+    [FormerlySerializedAs("playerHealth")] public Health health;
+    public float attackCooldown ; // Time in seconds between attacks
+    private bool canAttack = true; // To check if the enemy can attack
     
     public float damage;
 
@@ -32,8 +34,8 @@ public class MeleeEnemy : AEnemy
 
     private IEnumerator AttackCooldown()
     {
-        canAttack = false; 
-        yield return new WaitForSeconds(attackCooldown); 
-        canAttack = true; 
+        canAttack = false; // Disable attacking
+        yield return new WaitForSeconds(attackCooldown); // Wait for the cooldown period
+        canAttack = true; // Allow attacking again
     }
 }
