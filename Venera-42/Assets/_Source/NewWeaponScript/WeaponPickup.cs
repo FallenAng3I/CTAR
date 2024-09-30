@@ -3,8 +3,13 @@ using UnityEngine;
 public class WeaponPickup : MonoBehaviour
 {
     public float moveDistance = -10f;
+<<<<<<< HEAD
     public Weapon weapon; // Ссылка на ScriptableObject оружия
     public int ammoAmount = 10; // Количество патронов для данного оружия
+=======
+    public AWeapon1 weapon;
+    public int ammoAmount = 10;
+>>>>>>> 1e1960511945aef7cd522e5675092e6a791c9a92
 
     void OnTriggerEnter(Collider other)
     {
@@ -14,16 +19,12 @@ public class WeaponPickup : MonoBehaviour
             
             if (inventory.HasWeapon(weapon))
             {
-                // Если оружие уже есть, добавляем патроны
                 inventory.AddAmmo(weapon, ammoAmount);
             }
             else
             {
-                // Если оружия нет, добавляем его в инвентарь
                 inventory.PickupWeapon(weapon);
             }
-
-            // Удаляем префаб оружия с пола
 
             DontDestroyOnLoad(weapon);
             GetComponent<Collider>().enabled = false;

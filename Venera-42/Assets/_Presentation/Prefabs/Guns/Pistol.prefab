@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 758063275296175464}
   - component: {fileID: 1142611391999565092}
   - component: {fileID: 3254127833775838630}
-  - component: {fileID: 8908218799060669605}
   - component: {fileID: 3325727577484382211}
+  - component: {fileID: 8908218799060669605}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -101,6 +101,27 @@ MonoBehaviour:
   moveDistance: -10
   weapon: {fileID: 3325727577484382211}
   ammoAmount: 10
+--- !u!114 &3325727577484382211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6108797370639796280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e16f0408b1ece994180fe22276bbb6b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Gurza
+  modelPrefab: {fileID: 6108797370639796280}
+  currentAmmo: 18
+  maxAmmo: 18
+  projectile: {fileID: 423038715591290101, guid: 1dd331926f29c3c49b7537f6cdd48b89, type: 3}
+  projectileSpeed: 42
+  shootPoint: {fileID: 0}
+  inventory: {fileID: 0}
+  scope: 0
 --- !u!65 &8908218799060669605
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -122,25 +143,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3325727577484382211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6108797370639796280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e16f0408b1ece994180fe22276bbb6b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponName: Gurza
-  modelPrefab: {fileID: 6108797370639796280}
-  currentAmmo: 18
-  maxAmmo: 18
-  projectile: {fileID: 423038715591290101, guid: 1dd331926f29c3c49b7537f6cdd48b89, type: 3}
-  projectileSpeed: 42
-  fireRate: 0
-  shootPoint: {fileID: 0}
-  inventory: {fileID: 0}
-  scope: 0
