@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    public GameObject enemyPrefab; // Префаб врага
-    public Transform spawnPoint; // Центр радиуса спавна
-    public float spawnRadius = 5f; // Радиус спавна
-    public int numberOfEnemies = 5; // Количество врагов
+    public GameObject enemyPrefab; 
+    public Transform spawnPoint; 
+    public float spawnRadius = 5f; 
+    public int numberOfEnemies = 5; 
 
     void Start()
     {

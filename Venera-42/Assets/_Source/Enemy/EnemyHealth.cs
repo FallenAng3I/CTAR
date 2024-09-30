@@ -6,7 +6,7 @@ public class EnemyHealth : Health
 {
     public void TakeDamage(float damageAmount)
     {
-        currentHealth -= damageAmount; // Уменьшаем текущее здоровье на величину урона
+        currentHealth -= damageAmount; 
         
     }
 }

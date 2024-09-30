@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 public abstract class Health : MonoBehaviour
 {
-    public float maxHealth ; // Максимальное здоровье
-    public float currentHealth; // Текущее здоровье
+    public float maxHealth ; 
+    public float currentHealth; 
     
 
     void Start()
     {
-        currentHealth = maxHealth; // Устанавливаем текущее здоровье равным максимальному
+        currentHealth = maxHealth; 
     }
 
     private void Update()
