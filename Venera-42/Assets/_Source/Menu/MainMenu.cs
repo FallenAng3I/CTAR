@@ -7,7 +7,6 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Debug_Room");
     }
-
     public void QuitGame()
     {
         Application.Quit();

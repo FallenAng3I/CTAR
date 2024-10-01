@@ -7,7 +7,6 @@ public class PlayerInventory : MonoBehaviour
     public AWeapon1 currentWeapon;
     public Transform weaponHoldPoint;
     public GameObject weaponModel;
-
     public void PickupWeapon(AWeapon1 newWeapon)
     {
         weapons.Add(newWeapon);
@@ -18,18 +17,15 @@ public class PlayerInventory : MonoBehaviour
             EquipWeapon(newWeapon);
         }
     }
-
     public bool HasWeapon(AWeapon1 weapon)
     {
         return weapons.Contains(weapon);
     }
-
     public void AddAmmo(AWeapon1 weapon, int ammoAmount)
     {
         weapon.currentAmmo += ammoAmount;
         Debug.Log(weapon.weaponName + " ammo added: " + ammoAmount);
     }
-
     public void EquipWeapon(AWeapon1 weapon)
     {
         if (weaponModel != null)
@@ -37,28 +33,26 @@ public class PlayerInventory : MonoBehaviour
             Destroy(weaponModel);
             weaponModel = null;
         }
-        
         if (weapons.Contains(weapon))
         {
             currentWeapon = weapon;
-            
+
             weaponModel = Instantiate(weapon.modelPrefab, weaponHoldPoint.position, weaponHoldPoint.rotation);
             weaponModel.transform.SetParent(weaponHoldPoint);
-            
+
             weaponModel.transform.localRotation = Quaternion.identity;
             weaponModel.transform.localPosition = Vector3.zero;
 
             Debug.Log("Weapon equipped: " + weapon.weaponName);
         }
     }
-
+    //TODO перенести в другой скрипт
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && currentWeapon != null && currentWeapon.scope ) 
+        if (Input.GetButtonDown("Fire1") && currentWeapon != null && currentWeapon.scope)
         {
             currentWeapon.Shoot();
         }
-
         if (currentWeapon != null)
         {
             currentWeapon.Scope();

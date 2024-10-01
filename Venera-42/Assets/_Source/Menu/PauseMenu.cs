@@ -5,10 +5,9 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool PauseGame;
     public GameObject pauseMenu;
-
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) 
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (PauseGame)
             {
@@ -20,22 +19,18 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
-
     public void Resume()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         PauseGame = false;
     }
-
     public void Pause()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         PauseGame = true;
-
     }
-
     public void LoadMenu()
     {
         Time.timeScale = 1f;

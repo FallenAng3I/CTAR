@@ -2,9 +2,8 @@ public class EnemyHealth : AHealth
 {
     public void TakeDamage(float damageAmount)
     {
-        currentHealth -= damageAmount; 
+        currentHealth -= damageAmount;
     }
-
     private void Update()
     {
         if (currentHealth <= 0)
