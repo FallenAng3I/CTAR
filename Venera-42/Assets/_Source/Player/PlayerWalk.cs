@@ -1,4 +1,1 @@
-public class PlayerWalk : APlayerMovement
-{
-    
-}
+public class PlayerWalk : APlayerMovement { }

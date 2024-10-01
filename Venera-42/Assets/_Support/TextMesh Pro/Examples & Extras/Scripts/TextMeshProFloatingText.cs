@@ -87,10 +87,7 @@ namespace TMPro.Examples
 
                 StartCoroutine(DisplayTextMeshFloatingText());
             }
-            else if (SpawnType == 2)
-            {
-
-            }
+            else if (SpawnType == 2) { }
 
         }
 

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class PlayerSprint : APlayerMovement
-{ 
+{
     public override void MovePlayer()
     {
         if (weaponinv.currentWeapon != null)
@@ -15,6 +15,7 @@ public class PlayerSprint : APlayerMovement
                 moveSpeed = 3f;
             }
         }
+
         if (Input.GetKey(KeyCode.LeftShift))
         {
             float horizontal = Input.GetAxis("Horizontal");

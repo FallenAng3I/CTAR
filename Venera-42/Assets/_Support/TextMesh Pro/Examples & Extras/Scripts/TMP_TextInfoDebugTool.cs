@@ -195,64 +195,64 @@ namespace TMPro.Examples
                 DrawCrosshair(advancePosition, 0.0125f / m_ScaleMultiplier, Color.yellow);
 
                 // Draw text labels for metrics
-               if (m_HandleSize < 0.5f)
-               {
-                   GUIStyle style = new GUIStyle(GUI.skin.GetStyle("Label"));
-                   style.normal.textColor = new Color(0.6f, 0.6f, 0.6f, 1.0f);
-                   style.fontSize = 12;
-                   style.fixedWidth = 200;
-                   style.fixedHeight = 20;
+                if (m_HandleSize < 0.5f)
+                {
+                    GUIStyle style = new GUIStyle(GUI.skin.GetStyle("Label"));
+                    style.normal.textColor = new Color(0.6f, 0.6f, 0.6f, 1.0f);
+                    style.fontSize = 12;
+                    style.fixedWidth = 200;
+                    style.fixedHeight = 20;
 
-                   Vector3 labelPosition;
-                   float center = (origin + advance) / 2;
+                    Vector3 labelPosition;
+                    float center = (origin + advance) / 2;
 
-                   //float baselineMetrics = 0;
-                   //float ascentlineMetrics = ascentline - baseline;
-                   //float caplineMetrics = capline - baseline;
-                   //float meanlineMetrics = meanline - baseline;
-                   //float descentlineMetrics = descentline - baseline;
+                    //float baselineMetrics = 0;
+                    //float ascentlineMetrics = ascentline - baseline;
+                    //float caplineMetrics = capline - baseline;
+                    //float meanlineMetrics = meanline - baseline;
+                    //float descentlineMetrics = descentline - baseline;
 
-                   // Ascent Line
-                   labelPosition = m_Transform.TransformPoint(new Vector3(center, ascentline, 0));
-                   style.alignment = TextAnchor.UpperCenter;
-                   Handles.Label(labelPosition, "Ascent Line", style);
-                   //Handles.Label(labelPosition, "Ascent Line (" + ascentlineMetrics.ToString("f3") + ")" , style);
+                    // Ascent Line
+                    labelPosition = m_Transform.TransformPoint(new Vector3(center, ascentline, 0));
+                    style.alignment = TextAnchor.UpperCenter;
+                    Handles.Label(labelPosition, "Ascent Line", style);
+                    //Handles.Label(labelPosition, "Ascent Line (" + ascentlineMetrics.ToString("f3") + ")" , style);
 
-                   // Base Line
-                   labelPosition = m_Transform.TransformPoint(new Vector3(center, baseline, 0));
-                   Handles.Label(labelPosition, "Base Line", style);
-                   //Handles.Label(labelPosition, "Base Line (" + baselineMetrics.ToString("f3") + ")" , style);
+                    // Base Line
+                    labelPosition = m_Transform.TransformPoint(new Vector3(center, baseline, 0));
+                    Handles.Label(labelPosition, "Base Line", style);
+                    //Handles.Label(labelPosition, "Base Line (" + baselineMetrics.ToString("f3") + ")" , style);
 
-                   // Descent line
-                   labelPosition = m_Transform.TransformPoint(new Vector3(center, descentline, 0));
-                   Handles.Label(labelPosition, "Descent Line", style);
-                   //Handles.Label(labelPosition, "Descent Line (" + descentlineMetrics.ToString("f3") + ")" , style);
+                    // Descent line
+                    labelPosition = m_Transform.TransformPoint(new Vector3(center, descentline, 0));
+                    Handles.Label(labelPosition, "Descent Line", style);
+                    //Handles.Label(labelPosition, "Descent Line (" + descentlineMetrics.ToString("f3") + ")" , style);
 
-                   if (characterInfo.isVisible)
-                   {
-                       // Cap Line
-                       labelPosition = m_Transform.TransformPoint(new Vector3(center, capline, 0));
-                       style.alignment = TextAnchor.UpperCenter;
-                       Handles.Label(labelPosition, "Cap Line", style);
-                       //Handles.Label(labelPosition, "Cap Line (" + caplineMetrics.ToString("f3") + ")" , style);
+                    if (characterInfo.isVisible)
+                    {
+                        // Cap Line
+                        labelPosition = m_Transform.TransformPoint(new Vector3(center, capline, 0));
+                        style.alignment = TextAnchor.UpperCenter;
+                        Handles.Label(labelPosition, "Cap Line", style);
+                        //Handles.Label(labelPosition, "Cap Line (" + caplineMetrics.ToString("f3") + ")" , style);
 
-                       // Mean Line
-                       labelPosition = m_Transform.TransformPoint(new Vector3(center, meanline, 0));
-                       style.alignment = TextAnchor.UpperCenter;
-                       Handles.Label(labelPosition, "Mean Line", style);
-                       //Handles.Label(labelPosition, "Mean Line (" + ascentlineMetrics.ToString("f3") + ")" , style);
+                        // Mean Line
+                        labelPosition = m_Transform.TransformPoint(new Vector3(center, meanline, 0));
+                        style.alignment = TextAnchor.UpperCenter;
+                        Handles.Label(labelPosition, "Mean Line", style);
+                        //Handles.Label(labelPosition, "Mean Line (" + ascentlineMetrics.ToString("f3") + ")" , style);
 
-                       // Origin
-                       labelPosition = m_Transform.TransformPoint(new Vector3(origin, baseline, 0));
-                       style.alignment = TextAnchor.UpperRight;
-                       Handles.Label(labelPosition, "Origin ", style);
+                        // Origin
+                        labelPosition = m_Transform.TransformPoint(new Vector3(origin, baseline, 0));
+                        style.alignment = TextAnchor.UpperRight;
+                        Handles.Label(labelPosition, "Origin ", style);
 
-                       // Advance
-                       labelPosition = m_Transform.TransformPoint(new Vector3(advance, baseline, 0));
-                       style.alignment = TextAnchor.UpperLeft;
-                       Handles.Label(labelPosition, "  Advance", style);
-                   }
-               }
+                        // Advance
+                        labelPosition = m_Transform.TransformPoint(new Vector3(advance, baseline, 0));
+                        style.alignment = TextAnchor.UpperLeft;
+                        Handles.Label(labelPosition, "  Advance", style);
+                    }
+                }
             }
         }
 
@@ -288,7 +288,7 @@ namespace TMPro.Examples
 
                     bool isCharacterVisible = characterIndex > m_TextComponent.maxVisibleCharacters ||
                                               currentCharInfo.lineNumber > m_TextComponent.maxVisibleLines ||
-                                             (m_TextComponent.overflowMode == TextOverflowModes.Page && currentCharInfo.pageNumber + 1 != m_TextComponent.pageToDisplay) ? false : true;
+                                              (m_TextComponent.overflowMode == TextOverflowModes.Page && currentCharInfo.pageNumber + 1 != m_TextComponent.pageToDisplay) ? false : true;
 
                     // Track Max Ascender and Min Descender
                     maxAscender = Mathf.Max(maxAscender, currentCharInfo.ascender);
@@ -394,7 +394,7 @@ namespace TMPro.Examples
 
                     bool isCharacterVisible = characterIndex > m_TextComponent.maxVisibleCharacters ||
                                               currentCharInfo.lineNumber > m_TextComponent.maxVisibleLines ||
-                                             (m_TextComponent.overflowMode == TextOverflowModes.Page && currentCharInfo.pageNumber + 1 != m_TextComponent.pageToDisplay) ? false : true;
+                                              (m_TextComponent.overflowMode == TextOverflowModes.Page && currentCharInfo.pageNumber + 1 != m_TextComponent.pageToDisplay) ? false : true;
 
                     // Track Max Ascender and Min Descender
                     maxAscender = Mathf.Max(maxAscender, currentCharInfo.ascender);
@@ -480,7 +480,7 @@ namespace TMPro.Examples
                 TMP_CharacterInfo lastCharacterInfo = m_TextInfo.characterInfo[lineInfo.lastCharacterIndex];
 
                 bool isLineVisible = (lineInfo.characterCount == 1 && (firstCharacterInfo.character == 10 || firstCharacterInfo.character == 11 || firstCharacterInfo.character == 0x2028 || firstCharacterInfo.character == 0x2029)) ||
-                                      i > m_TextComponent.maxVisibleLines ||
+                                     i > m_TextComponent.maxVisibleLines ||
                                      (m_TextComponent.overflowMode == TextOverflowModes.Page && firstCharacterInfo.pageNumber + 1 != m_TextComponent.pageToDisplay) ? false : true;
 
                 if (!isLineVisible) continue;
@@ -649,4 +649,3 @@ namespace TMPro.Examples
         #endif
     }
 }
-

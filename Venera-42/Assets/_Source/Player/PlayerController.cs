@@ -4,10 +4,12 @@ public class PlayerController : MonoBehaviour
 {
     public Camera mainCamera;
     public Transform player;
+
     void Update()
     {
         RotatePlayerTowardsCursor();
     }
+
     void RotatePlayerTowardsCursor()
     {
         Vector3 mousePosition = Input.mousePosition;
