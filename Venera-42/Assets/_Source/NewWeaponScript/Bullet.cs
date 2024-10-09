@@ -1,27 +1,31 @@
+using _Source.Enemy;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+namespace _Source.NewWeaponScript
 {
-    public float damageAmount = 20f; 
-    public float lifespan = 20f; 
-    private void Start()
+    public class Bullet : MonoBehaviour
     {
-        Destroy(gameObject, lifespan);
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
+        public float damageAmount = 20f; 
+        public float lifespan = 20f; 
+        private void Start()
         {
-            other.GetComponent<EnemyHealth>().TakeDamage(damageAmount);
-            Destroy(gameObject);
+            Destroy(gameObject, lifespan);
         }
-        else if (other.CompareTag("Player"))
+        private void OnTriggerEnter(Collider other)
         {
-            Destroy(gameObject);
-        }
-        else if (other.CompareTag("Obstacle"))
-        {
-            Destroy(gameObject);
+            if (other.CompareTag("Enemy"))
+            {
+                other.GetComponent<EnemyHealth>().TakeDamage(damageAmount);
+                Destroy(gameObject);
+            }
+            else if (other.CompareTag("Player"))
+            {
+                Destroy(gameObject);
+            }
+            else if (other.CompareTag("Obstacle"))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

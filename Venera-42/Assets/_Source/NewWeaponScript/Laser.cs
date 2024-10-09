@@ -1,27 +1,30 @@
 using UnityEngine;
 
-public class Laser : MonoBehaviour
+namespace _Source.NewWeaponScript
 {
-    public PlayerInventory inv;
-    public AWeapon1 weapon;
-    public GameObject laser;
-
-    void Start()
+    public class Laser : MonoBehaviour
     {
-        laser.GetComponent<Renderer>().enabled = false;
-    }
+        public PlayerAndWeapons inv;
+        public AWeapon weapon;
+        public GameObject laser;
 
-    void Update()
-    {
-        if (inv.currentWeapon != null)
+        void Start()
         {
-            if (inv.currentWeapon.scope)
+            laser.GetComponent<Renderer>().enabled = false;
+        }
+
+        void Update()
+        {
+            if (inv.currentWeapon != null)
             {
-                laser.GetComponent<Renderer>().enabled = true;
-            }
-            else
-            {
-                laser.GetComponent<Renderer>().enabled = false;
+                if (inv.currentWeapon.scope)
+                {
+                    laser.GetComponent<Renderer>().enabled = true;
+                }
+                else
+                {
+                    laser.GetComponent<Renderer>().enabled = false;
+                }
             }
         }
     }

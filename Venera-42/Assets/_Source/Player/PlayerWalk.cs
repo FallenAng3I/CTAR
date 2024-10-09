@@ -1,1 +1,7 @@
-public class PlayerWalk : APlayerMovement { }
+namespace _Source.Player
+{
+    public class PlayerWalk : APlayerMovement
+    {
+        
+    }
+}

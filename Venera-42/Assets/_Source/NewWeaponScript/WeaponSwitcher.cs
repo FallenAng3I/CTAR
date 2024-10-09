@@ -1,14 +1,15 @@
+using _Source.NewWeaponScript;
 using UnityEngine;
 
 public class WeaponSwitcher : MonoBehaviour
 {
-    private PlayerInventory inventory;
+    private PlayerAndWeapons _andWeapons;
     private int currentWeaponIndex = 0;
     void Start()
     {
-        inventory = GetComponent<PlayerInventory>();
+        _andWeapons = GetComponent<PlayerAndWeapons>();
         
-        if (inventory.weapons.Count > 0)
+        if (_andWeapons.weapons.Count > 0)
         {
             EquipWeaponAtIndex(currentWeaponIndex);
         }
@@ -21,7 +22,7 @@ public class WeaponSwitcher : MonoBehaviour
     }
     void SwitchWeapon(int weaponIndex)
     {
-        if (weaponIndex >= 0 && weaponIndex < inventory.weapons.Count)
+        if (weaponIndex >= 0 && weaponIndex < _andWeapons.weapons.Count)
         {
             currentWeaponIndex = weaponIndex;
             EquipWeaponAtIndex(currentWeaponIndex);
@@ -33,12 +34,12 @@ public class WeaponSwitcher : MonoBehaviour
     }
     void EquipWeaponAtIndex(int index)
     {
-        if (inventory.weaponModel != null)
+        if (_andWeapons.weaponModel != null)
         {
-            Destroy(inventory.weaponModel);
+            Destroy(_andWeapons.weaponModel);
         }
         
-        AWeapon1 weaponToEquip = inventory.weapons[index];
-        inventory.EquipWeapon(weaponToEquip);
+        AWeapon weaponToEquip = _andWeapons.weapons[index];
+        _andWeapons.EquipWeapon(weaponToEquip);
     }
 }

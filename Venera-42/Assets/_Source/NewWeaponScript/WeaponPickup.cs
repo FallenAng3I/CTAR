@@ -1,23 +1,24 @@
+using _Source.NewWeaponScript;
 using UnityEngine;
 
 public class WeaponPickup : MonoBehaviour
 {
     public float moveDistance = -10f;
-    public AWeapon1 weapon;
+    public AWeapon weapon;
     public int ammoAmount = 10;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            PlayerInventory inventory = other.GetComponent<PlayerInventory>();
+            PlayerAndWeapons andWeapons = other.GetComponent<PlayerAndWeapons>();
 
-            if (inventory.HasWeapon(weapon))
+            if (andWeapons.HasWeapon(weapon))
             {
-                inventory.AddAmmo(weapon, ammoAmount);
+                andWeapons.AddAmmo(weapon, ammoAmount);
             }
             else
             {
-                inventory.PickupWeapon(weapon);
+                andWeapons.PickupWeapon(weapon);
             }
 
             DontDestroyOnLoad(weapon);

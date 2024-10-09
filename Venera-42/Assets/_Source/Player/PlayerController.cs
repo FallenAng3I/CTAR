@@ -1,28 +1,31 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+namespace _Source.Player
 {
-    public Camera mainCamera;
-    public Transform player;
-
-    void Update()
+    public class PlayerController : MonoBehaviour
     {
-        RotatePlayerTowardsCursor();
-    }
+        public Camera mainCamera;
+        public Transform player;
 
-    void RotatePlayerTowardsCursor()
-    {
-        Vector3 mousePosition = Input.mousePosition;
-        Ray ray = mainCamera.ScreenPointToRay(mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hitInfo))
+        void Update()
         {
-            Vector3 targetPosition = hitInfo.point;
-            targetPosition.y = player.position.y;
-            Vector3 direction = (targetPosition - player.position).normalized;
-            if (direction.magnitude > 0.1f)
+            RotatePlayerTowardsCursor();
+        }
+
+        void RotatePlayerTowardsCursor()
+        {
+            Vector3 mousePosition = Input.mousePosition;
+            Ray ray = mainCamera.ScreenPointToRay(mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hitInfo))
             {
-                Quaternion lookRotation = Quaternion.LookRotation(direction);
-                player.rotation = lookRotation;
+                Vector3 targetPosition = hitInfo.point;
+                targetPosition.y = player.position.y;
+                Vector3 direction = (targetPosition - player.position).normalized;
+                if (direction.magnitude > 0.1f)
+                {
+                    Quaternion lookRotation = Quaternion.LookRotation(direction);
+                    player.rotation = lookRotation;
+                }
             }
         }
     }

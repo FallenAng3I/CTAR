@@ -1,34 +1,50 @@
+using _Source.Player;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public abstract class AEnemy : MonoBehaviour
+namespace _Source.Enemy
 {
-    public float attackRange;
-    public float speed;
-    public float detectionRange;
-    protected Transform player;
-    protected NavMeshAgent agent;
-    protected virtual void Start()
+    public abstract class AEnemy : EnemyInfo
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        agent = GetComponent<NavMeshAgent>();
-        agent.speed = speed;
-    }
-    protected virtual void Update()
-    {
-        if (IsPlayerInRange())
+        protected virtual void Start()
         {
-            PerformAttack();
-            MoveTowardsPlayer();
+            playerHealth = FindObjectOfType<PlayerHealth>();
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+            agent = GetComponent<NavMeshAgent>();
+            agent.speed = speed;
         }
-    }
-    protected bool IsPlayerInRange()
-    {
-        return Vector3.Distance(transform.position, player.position) <= detectionRange;
-    }
-    protected abstract void PerformAttack();
-    private void MoveTowardsPlayer()
-    {
-        agent.SetDestination(player.position);
+        protected virtual void Update()
+        {
+            if (IsPlayerInRange())
+            {
+                MoveTowardsPlayer();
+            }
+        }
+        protected bool IsPlayerInRange()
+        {
+            return Vector3.Distance(transform.position, player.position) <= detectionRange;
+        }
+
+        protected virtual void PerformAttack()
+        {
+            if (canAttack)
+            {
+                Debug.Log("Атакую!");
+                playerHealth.currentHealth -= damage;
+                StartCoroutine(AttackCooldown());
+            }
+        }
+        private void MoveTowardsPlayer()
+        {
+            agent.SetDestination(player.position);
+        }
+        
+        private IEnumerator AttackCooldown()
+        {
+            canAttack = false;
+            yield return new WaitForSeconds(attackCooldown);
+            canAttack = true;
+        }
     }
 }

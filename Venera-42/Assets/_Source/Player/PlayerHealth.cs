@@ -1,34 +1,37 @@
 using UnityEngine;
 
-public class PlayerHealth : AHealth
+namespace _Source.Player
 {
-    public Light lightSource;
-    public int lightThreshold = 50;
-    public Color healthyColor = Color.HSVToRGB(255, 251, 144);
-    public Color midHealthColor = Color.HSVToRGB(135, 133, 64);
-
-    void Start()
+    public class PlayerHealth : AHealth
     {
-        currentHealth = maxHealth;
-    }
+        public Light lightSource;
+        public int lightThreshold = 50;
+        public Color healthyColor = Color.HSVToRGB(255, 251, 144);
+        public Color midHealthColor = Color.HSVToRGB(135, 133, 64);
 
-    private void Update()
-    {
-        if (lightSource != null)
+        void Start()
         {
-            if (currentHealth <= lightThreshold)
-            {
-                lightSource.color = midHealthColor;
-            }
-            else
-            {
-                lightSource.color = healthyColor;
-            }
+            currentHealth = maxHealth;
         }
 
-        if (currentHealth <= 0)
+        private void Update()
         {
-            Die();
+            if (lightSource != null)
+            {
+                if (currentHealth <= lightThreshold)
+                {
+                    lightSource.color = midHealthColor;
+                }
+                else
+                {
+                    lightSource.color = healthyColor;
+                }
+            }
+
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
         }
     }
 }

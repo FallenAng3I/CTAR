@@ -1,14 +1,17 @@
-public class EnemyHealth : AHealth
+namespace _Source.Enemy
 {
-    public void TakeDamage(float damageAmount)
+    public class EnemyHealth : AHealth
     {
-        currentHealth -= damageAmount;
-    }
-    private void Update()
-    {
-        if (currentHealth <= 0)
+        public void TakeDamage(float damageAmount)
         {
-            Die();
+            currentHealth -= damageAmount;
+        }
+        private void Update()
+        {
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
         }
     }
 }
