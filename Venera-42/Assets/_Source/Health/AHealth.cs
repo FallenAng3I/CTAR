@@ -14,7 +14,6 @@ namespace _Source
 
         public void Die()
         {
-            Debug.Log("Игрок погиб!");
             gameObject.SetActive(false);
         }
     }

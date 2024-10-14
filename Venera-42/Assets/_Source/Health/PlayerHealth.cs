@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Source.Player
+namespace _Source.Health
 {
     public class PlayerHealth : AHealth
     {
@@ -31,6 +31,7 @@ namespace _Source.Player
             if (currentHealth <= 0)
             {
                 Die();
+                Debug.Log("Игрок погиб!");
             }
         }
     }
