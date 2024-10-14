@@ -2,18 +2,8 @@ using UnityEngine;
 
 namespace _Source.NewWeaponScript
 {
-    public abstract class AWeapon : MonoBehaviour
+    public abstract class AWeapon : WeaponInfo
     {
-        public string weaponName; 
-        public GameObject modelPrefab; 
-        public int currentAmmo; 
-        public GameObject projectile; 
-        public float projectileSpeed; 
-        private float nextFireTime; 
-        public Transform shootPoint; 
-        public PlayerAndWeapons andWeapons;
-        public bool scope;
-
         public virtual void Shoot()
         {
             if (andWeapons.currentWeapon.currentAmmo > 0)

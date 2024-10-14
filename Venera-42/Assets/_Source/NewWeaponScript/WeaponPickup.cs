@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class WeaponPickup : MonoBehaviour
 {
-    public float moveDistance = -10f;
-    public AWeapon weapon;
-    public int ammoAmount = 10;
+    [SerializeField] private float moveDistance = -10f;
+    [SerializeField] private AWeapon weapon;
+    [SerializeField] private int ammoAmount = 10;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

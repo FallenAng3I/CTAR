@@ -4,9 +4,9 @@ namespace _Source.NewWeaponScript
 {
     public class Laser : MonoBehaviour
     {
-        public PlayerAndWeapons inv;
-        public AWeapon weapon;
-        public GameObject laser;
+        [SerializeField] private PlayerAndWeapons inv;
+        [SerializeField] private AWeapon weapon;
+        [SerializeField] private GameObject laser;
 
         void Start()
         {

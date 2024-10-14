@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class WeaponSwitcher : MonoBehaviour
 {
-    private PlayerAndWeapons _andWeapons;
-    private int currentWeaponIndex = 0;
+    [SerializeField] private PlayerAndWeapons _andWeapons;
+    [SerializeField] private int currentWeaponIndex = 0;
     void Start()
     {
         _andWeapons = GetComponent<PlayerAndWeapons>();

@@ -4,8 +4,8 @@ namespace _Source.Player
 {
     public class PlayerController : MonoBehaviour
     {
-        public Camera mainCamera;
-        public Transform player;
+        [SerializeField] private Camera mainCamera;
+        [SerializeField] private Transform player;
 
         void Update()
         {

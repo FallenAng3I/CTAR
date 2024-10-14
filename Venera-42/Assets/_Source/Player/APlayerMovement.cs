@@ -4,8 +4,8 @@ namespace _Source.Player
 {
     public abstract class APlayerMovement : MonoBehaviour
     {
-        public float moveSpeed;
-        public PlayerAndWeapons weaponinv;
+        [SerializeField] protected float moveSpeed;
+        [SerializeField] protected PlayerAndWeapons weaponinv;
 
         private void Update()
         {
