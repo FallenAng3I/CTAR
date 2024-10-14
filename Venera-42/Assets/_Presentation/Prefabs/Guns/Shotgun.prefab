@@ -119,7 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 885c259bb23c95946b70f62c843b3dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 50c2cf805075dda4ca7dda2ab9601180, type: 2}
+  moveDistance: -10
+  weapon: {fileID: 397679872064397895}
   ammoAmount: 4
 --- !u!114 &397679872064397895
 MonoBehaviour:
@@ -133,12 +134,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8ba86f526fb63499f457def8b0aed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: 
-  modelPrefab: {fileID: 0}
-  currentAmmo: 0
-  maxAmmo: 0
-  projectile: {fileID: 0}
-  projectileSpeed: 0
-  fireRate: 0
+  weaponName: Cowboy
+  modelPrefab: {fileID: 3009391276272695818}
+  currentAmmo: 10
+  projectile: {fileID: 423038715591290101, guid: 1dd331926f29c3c49b7537f6cdd48b89, type: 3}
+  projectileSpeed: 40
   shootPoint: {fileID: 0}
-  inventory: {fileID: 0}
+  andWeapons: {fileID: 0}
+  scope: 0
+  shotgunSpread: 5
+  shotgunPelletCount: 4

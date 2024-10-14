@@ -5,8 +5,8 @@ namespace _Source.NewWeaponScript
 {
     public class Bullet : MonoBehaviour
     {
-        [SerializeField] private float damageAmount = 20f; 
-        [SerializeField] private float lifespan = 20f; 
+        [SerializeField] private float damageAmount = 20f;
+        [SerializeField] private float lifespan; 
         private void Start()
         {
             Destroy(gameObject, lifespan);

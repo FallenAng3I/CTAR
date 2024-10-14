@@ -1,45 +1,48 @@
-using _Source.NewWeaponScript;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class WeaponSwitcher : MonoBehaviour
+namespace _Source.NewWeaponScript
 {
-    [SerializeField] private PlayerAndWeapons _andWeapons;
-    [SerializeField] private int currentWeaponIndex = 0;
-    void Start()
+    public class WeaponSwitcher : MonoBehaviour
     {
-        _andWeapons = GetComponent<PlayerAndWeapons>();
+        [SerializeField] private PlayerAndWeapons andWeapons;
+        [SerializeField] private int currentWeaponIndex = 0;
+        void Start()
+        {
+            andWeapons = FindObjectOfType<PlayerAndWeapons>();
         
-        if (_andWeapons.weapons.Count > 0)
-        {
-            EquipWeaponAtIndex(currentWeaponIndex);
+            if (andWeapons.weapons.Count > 0)
+            {
+                EquipWeaponAtIndex(currentWeaponIndex);
+            }
         }
-    }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) SwitchWeapon(0);
-        if (Input.GetKeyDown(KeyCode.Alpha2)) SwitchWeapon(1);
-        if (Input.GetKeyDown(KeyCode.Alpha3)) SwitchWeapon(2);
-    }
-    void SwitchWeapon(int weaponIndex)
-    {
-        if (weaponIndex >= 0 && weaponIndex < _andWeapons.weapons.Count)
+        void Update()
         {
-            currentWeaponIndex = weaponIndex;
-            EquipWeaponAtIndex(currentWeaponIndex);
+            if (Input.GetKeyDown(KeyCode.Alpha1)) SwitchWeapon(0);
+            if (Input.GetKeyDown(KeyCode.Alpha2)) SwitchWeapon(1);
+            if (Input.GetKeyDown(KeyCode.Alpha3)) SwitchWeapon(2);
         }
-        else
+        void SwitchWeapon(int weaponIndex)
         {
-            Debug.Log("No weapon in this slot.");
+            if (weaponIndex >= 0 && weaponIndex < andWeapons.weapons.Count)
+            {
+                currentWeaponIndex = weaponIndex;
+                EquipWeaponAtIndex(currentWeaponIndex);
+            }
+            else
+            {
+                Debug.Log("No weapon in this slot.");
+            }
         }
-    }
-    void EquipWeaponAtIndex(int index)
-    {
-        if (_andWeapons.weaponModel != null)
+        void EquipWeaponAtIndex(int index)
         {
-            Destroy(_andWeapons.weaponModel);
-        }
+            if (andWeapons.weaponModel != null)
+            {
+                Destroy(andWeapons.weaponModel);
+            }
         
-        AWeapon weaponToEquip = _andWeapons.weapons[index];
-        _andWeapons.EquipWeapon(weaponToEquip);
+            AWeapon weaponToEquip = andWeapons.weapons[index];
+            andWeapons.EquipWeapon(weaponToEquip);
+        }
     }
 }
