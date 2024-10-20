@@ -22,9 +22,10 @@ namespace _Source.NewWeaponScript
             {
                 Destroy(gameObject);
             }
-            else if (other.CompareTag("Obstacle"))
+            if (other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
             {
                 Destroy(gameObject);
+                Debug.Log("Bullet destroyed");
             }
         }
     }
