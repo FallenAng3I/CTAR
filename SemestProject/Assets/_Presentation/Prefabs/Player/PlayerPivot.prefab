@@ -400,6 +400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8871667368809962875}
   - component: {fileID: 3813895837490246513}
+  - component: {fileID: 7838373178846561828}
   - component: {fileID: 769793554348577516}
   - component: {fileID: 3832614922541584751}
   m_Layer: 3
@@ -438,6 +439,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponPivot: {fileID: 3050047129013183111}
+  inventory: []
+--- !u!114 &7838373178846561828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6882298853319257109}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0ee4d34a528684b8c216773264b60c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: AKS-74U
+  damage: 10
+  fireRate: 1
+  maxMagazineAmmo: 30
+  currentMagazineAmmo: 30
+  reserveAmmo: 300
+  maxReserveAmmo: 300
+  weaponModel: {fileID: 5786097810451525583, guid: 9ca795e092c73ce41a948022787dfba1, type: 3}
+  firePoint: {fileID: 0}
+  aimLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  bulletPrefab: {fileID: 0}
 --- !u!114 &769793554348577516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,6 +523,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: df2fefb9-6ed8-4f2c-aea7-cc2a42b09996
     m_ActionName: Player/Reload[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f274f704-4ac7-4d9d-8c50-197f926e7941
+    m_ActionName: Player/Shoot[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

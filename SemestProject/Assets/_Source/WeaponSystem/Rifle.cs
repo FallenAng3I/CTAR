@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace WeaponSystem
@@ -5,7 +6,7 @@ namespace WeaponSystem
     public class Rifle : AWeapon
     {
         public GameObject bulletPrefab;
-        
+
         protected override void FireBullet()
         {
             if (bulletPrefab != null && firePoint != null)

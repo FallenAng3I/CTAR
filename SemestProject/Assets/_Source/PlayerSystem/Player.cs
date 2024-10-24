@@ -12,28 +12,6 @@ namespace PlayerSystem
         
         private AWeapon currentWeapon; // Текущее оружие в руках
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                SwitchWeapon(0);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                SwitchWeapon(1);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                SwitchWeapon(2);
-            }
-
-            // Стрельба, если текущее оружие не пустое
-            if (Input.GetButtonDown("Fire1") && currentWeaponIndex >= 0)
-            {
-                inventory[currentWeaponIndex].Shoot();
-            }
-        }
-
         public void PickupWeapon(AWeapon weapon)
         {
             Debug.Log("Picking up weapon: " + weapon.weaponName);

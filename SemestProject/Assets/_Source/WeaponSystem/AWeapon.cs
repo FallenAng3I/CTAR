@@ -27,17 +27,7 @@ namespace WeaponSystem
         
         public virtual void Shoot()
         {
-            if (CanShoot())
-            {
-                Debug.Log(weaponName + " fired!");
-                
-                currentMagazineAmmo--;
-                lastShotTime = Time.time;
-                
-                FireBullet();
-
-                // Место для анимации и звуков оружия
-            }
+            
         }
 
         protected virtual void FireBullet()

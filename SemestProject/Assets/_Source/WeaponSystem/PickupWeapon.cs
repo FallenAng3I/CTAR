@@ -3,21 +3,18 @@ using UnityEngine;
 
 namespace WeaponSystem
 {
-    public class PickupWeapon : MonoBehaviour
+    public class PickupRifle : MonoBehaviour
     {
-        public AWeapon weaponPrefab; // Префаб оружия, который будет подбираться
         public LayerMask playerLayer; // Слой игрока
-
+        public Player player;
+        
         private void OnTriggerEnter(Collider other)
         {
-            Player player = other.GetComponent<Player>();
-            if (player != null)
+            Rifle playerRifle = player.GetComponent<Rifle>();
+            
+            if (playerRifle.GetComponent<Rifle>().enabled == false)
             {
-                // Уничтожаем объект оружия на земле
-                Destroy(gameObject);
-                    
-                // Передаем оружие в инвентарь игрока
-                player.PickupWeapon(weaponPrefab);
+                playerRifle.GetComponent<Rifle>().enabled = true;
             }
             
             Destroy(gameObject);
