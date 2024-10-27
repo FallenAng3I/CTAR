@@ -1,21 +1,22 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using WeaponSystem;
 
 namespace PlayerSystem
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private float speed;
         private Vector2 _move;
 
-        public void OnMove(InputAction.CallbackContext context)
-        {
-            _move = context.ReadValue<Vector2>();
-        }
-
         private void Update()
         {
             MovePlayer();
+        }
+        
+        public void OnMove(InputAction.CallbackContext context)
+        {
+            _move = context.ReadValue<Vector2>();
         }
 
         private void MovePlayer()

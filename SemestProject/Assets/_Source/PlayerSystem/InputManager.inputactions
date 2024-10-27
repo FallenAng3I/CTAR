@@ -25,7 +25,7 @@
                 },
                 {
                     "name": "Shoot",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "f274f704-4ac7-4d9d-8c50-197f926e7941",
                     "expectedControlType": "Button",
                     "processors": "",

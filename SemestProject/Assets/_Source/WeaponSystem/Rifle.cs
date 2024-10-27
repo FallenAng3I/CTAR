@@ -1,30 +1,33 @@
-using System;
 using UnityEngine;
 
 namespace WeaponSystem
 {
-    public class Rifle : AWeapon
+    public class Rifle : MonoBehaviour
     {
-        public GameObject bulletPrefab;
-
-        protected override void FireBullet()
-        {
-            if (bulletPrefab != null && firePoint != null)
-            {
-                GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-                
-                Bullet bulletComponent = bullet.GetComponent<Bullet>();
-                if (bulletComponent != null)
-                {
-                    bulletComponent.Initialize(damage);
-                }
+        [Header("AKS-74U Parameters")]
+        public int damage;
+        public float fireRate;
+        public int magazineAmmo;
+        public int maxMagazineAmmo;
+        public int reserveAmmo;
+        public int maxReserveAmmno;
         
-                Rigidbody rb = bullet.GetComponent<Rigidbody>();
-                if (rb != null)
-                {
-                    rb.velocity = firePoint.forward * 50f;
-                }
-            }
+        [SerializeField] private GameObject bulletPrefab;
+        [SerializeField] private GameObject shootPivot;
+
+        public void Shoot()
+        {
+            Debug.Log("Стреляю!");
+        }
+
+        public void Reload()
+        {
+            Debug.Log("Перезаряжаю!");
+        }
+
+        public void Update()
+        {
+            
         }
     }
 }

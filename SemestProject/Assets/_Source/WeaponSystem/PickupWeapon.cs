@@ -5,19 +5,26 @@ namespace WeaponSystem
 {
     public class PickupRifle : MonoBehaviour
     {
-        public LayerMask playerLayer; // Слой игрока
         public Player player;
         
         private void OnTriggerEnter(Collider other)
         {
-            Rifle playerRifle = player.GetComponent<Rifle>();
-            
-            if (playerRifle.GetComponent<Rifle>().enabled == false)
+            if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
-                playerRifle.GetComponent<Rifle>().enabled = true;
+                Rifle playerRifle = player.GetComponent<Rifle>();
+                
+                if (playerRifle.GetComponent<Rifle>().enabled == false)
+                {
+                    playerRifle.GetComponent<Rifle>().enabled = true;
+                    
+                }
+                else if (playerRifle.GetComponent<Rifle>().enabled == true)
+                {
+                    playerRifle.reserveAmmo += 20;
+                }
+                
+                Destroy(gameObject);            
             }
-            
-            Destroy(gameObject);
         }
     }
 }
