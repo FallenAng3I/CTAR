@@ -11,7 +11,7 @@ namespace WeaponSystem
         
         private void Awake()
         {
-            //transform.Rotate(0, 90, 0);
+            transform.Rotate(0, 90, 0);
             Destroy(gameObject, lifetime);
         }
 

@@ -39,8 +39,10 @@ namespace WeaponSystem
                     
                     GameObject projectile = Instantiate(bulletPrefab, shootPivot.position, shootPivot.rotation);
                     
+                    //projectile.transform.Rotate(90, 0, 0);
+                    
                     Rigidbody bulletRb = projectile.GetComponent<Rigidbody>();
-                    bulletRb.velocity = transform.forward * bullet.speed;
+                    bulletRb.velocity = projectile.transform.forward * bullet.speed;
 
                     Debug.Log("Стреляю!");
                 }
