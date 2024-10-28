@@ -1,3 +1,5 @@
+using System;
+using PlayerSystem;
 using UnityEngine;
 
 namespace WeaponSystem
@@ -11,13 +13,42 @@ namespace WeaponSystem
         public int maxMagazineAmmo;
         public int reserveAmmo;
         public int maxReserveAmmno;
+
+        public bool isScope = false;
+        private bool _canShoot = false;
+        private float _nextFireTime;
         
+        private Camera _mainCamera;
         [SerializeField] private GameObject bulletPrefab;
-        [SerializeField] private GameObject shootPivot;
+        [SerializeField] private Transform shootPivot;
+        [SerializeField] private Player player;
+        [SerializeField] private Bullet bullet;
+
+        private void Start()
+        {
+            _mainCamera = Camera.main;
+        }
 
         public void Shoot()
         {
-            Debug.Log("Стреляю!");
+            if (_canShoot == true)
+            {
+                if (Time.time >= _nextFireTime)
+                {
+                    _nextFireTime = Time.time + 1f / fireRate;
+                    
+                    GameObject projectile = Instantiate(bulletPrefab, shootPivot.position, shootPivot.rotation);
+                    
+                    Rigidbody bulletRb = projectile.GetComponent<Rigidbody>();
+                    bulletRb.velocity = transform.forward * bullet.speed;
+
+                    Debug.Log("Стреляю!");
+                }
+            }
+            else
+            {
+                Debug.Log("Не могу стрелять!");
+            }
         }
 
         public void Reload()
@@ -25,9 +56,16 @@ namespace WeaponSystem
             Debug.Log("Перезаряжаю!");
         }
 
-        public void Update()
+        public void Scope()
         {
-            
+            if (isScope == true)
+            {
+                _canShoot = true;
+            }
+            else
+            {
+                _canShoot = false;
+            }
         }
     }
 }

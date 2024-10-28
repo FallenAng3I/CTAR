@@ -5,6 +5,7 @@ namespace PlayerSystem
 {
     public class Player : MonoBehaviour
     {
+        public float speed;
         public GameObject weapon;
 
         private void Update()

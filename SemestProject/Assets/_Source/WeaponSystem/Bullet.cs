@@ -4,11 +4,14 @@ namespace WeaponSystem
 {
     public class Bullet : MonoBehaviour
     {
+        public float speed;
         public float lifetime = 5f;
-        public float damage;
+        //public float damage;
+        
         
         private void Awake()
         {
+            //transform.Rotate(0, 90, 0);
             Destroy(gameObject, lifetime);
         }
 
@@ -19,11 +22,6 @@ namespace WeaponSystem
             // Пример: collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
             
             Destroy(gameObject);
-        }
-
-        public void Initialize(float bulletDamage)
-        {
-            damage = bulletDamage;
         }
     }
 }

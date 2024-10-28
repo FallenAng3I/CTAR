@@ -5,12 +5,14 @@ namespace PlayerSystem
 {
     public class InputListener : MonoBehaviour
     {
+        public Player player;
         public Rifle weapon;
         
         private void Update()
         {
             ReadShoot();
             ReadReload();
+            ReadScope();
         }
 
         private void ReadShoot()
@@ -32,6 +34,24 @@ namespace PlayerSystem
                 {
                     weapon.Reload();
                 }            
+            }
+        }
+
+        private void ReadScope()
+        {
+            if (weapon.enabled == true)
+            {
+                if (Input.GetKey(KeyCode.Mouse1))
+                {
+                    weapon.isScope = true;
+                    player.speed = 2;
+                    weapon.Scope();
+                }
+                else
+                {
+                    weapon.isScope = false;
+                    player.speed = 5;
+                }
             }
         }
     }
