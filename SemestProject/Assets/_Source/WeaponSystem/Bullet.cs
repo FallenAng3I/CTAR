@@ -1,3 +1,4 @@
+using EnemySystem;
 using UnityEngine;
 
 namespace WeaponSystem
@@ -6,7 +7,7 @@ namespace WeaponSystem
     {
         public float speed;
         public float lifetime = 5f;
-        //public float damage;
+        public int damage;
         
         
         private void Awake()
@@ -17,9 +18,10 @@ namespace WeaponSystem
 
         private void OnCollisionEnter(Collision collision)
         {
-            // Здесь можно добавить логику для обработки столкновения
-            // Например, если пуля ударяется в врага, можно вызвать метод у врага, чтобы нанести урон
-            // Пример: collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+            if (collision.gameObject.TryGetComponent<AEnemy>(out AEnemy enemy))
+            {
+                enemy.TakeDamage(damage); // Наносим урон
+            }
             
             Destroy(gameObject);
         }

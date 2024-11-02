@@ -43,14 +43,7 @@ namespace PlayerSystem
             {
                 if (Input.GetKey(KeyCode.Mouse1))
                 {
-                    weapon.isScope = true;
-                    player.speed = 2;
                     weapon.Scope();
-                }
-                else
-                {
-                    weapon.isScope = false;
-                    player.speed = 5;
                 }
             }
         }
