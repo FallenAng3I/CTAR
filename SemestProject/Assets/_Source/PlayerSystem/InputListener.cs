@@ -17,7 +17,7 @@ namespace PlayerSystem
 
         private void ReadShoot()
         {
-            if (weapon.enabled == true)
+            if (weapon.enabled)
             {
                 if (Input.GetKey(KeyCode.Mouse0))
                 {
@@ -25,26 +25,31 @@ namespace PlayerSystem
                 }            
             }
         }
+        
+        private void ReadScope()
+        {
+            if (weapon.enabled)
+            {
+                if (Input.GetKey(KeyCode.Mouse1))
+                {
+                    weapon.canShoot = true;
+                    weapon.Scope();
+                }
+                else
+                {
+                    weapon.canShoot = false;
+                }
+            }
+        }        
 
         private void ReadReload()
         {
-            if (weapon.enabled == true)
+            if (weapon.enabled)
             {
                 if (Input.GetKeyDown(KeyCode.R))
                 {
                     weapon.Reload();
                 }            
-            }
-        }
-
-        private void ReadScope()
-        {
-            if (weapon.enabled == true)
-            {
-                if (Input.GetKey(KeyCode.Mouse1))
-                {
-                    weapon.Scope();
-                }
             }
         }
     }

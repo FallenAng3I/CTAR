@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using PlayerSystem;
 using UnityEngine;
@@ -17,9 +16,9 @@ namespace WeaponSystem
         public int maxReserveAmmno;
         public float reloadTime;
 
-        public bool isScope = false;
-        private bool _canShoot = false;
-        private bool _isReloading = false;
+        //public bool isScope = false;
+        public bool canShoot = false;
+        public bool isReloading = false;
         private float _nextFireTime;
         private float _originalSpeed;
         
@@ -30,14 +29,14 @@ namespace WeaponSystem
         [SerializeField] private Bullet bullet;
         [SerializeField] private GUIView gui;
 
-        private void Awake()
+        public void Start()
         {
             _originalSpeed = player.speed;
         }
 
         public void Shoot()
         {
-            if (_canShoot == true && magazineAmmo > 0 && !_isReloading)
+            if (canShoot && magazineAmmo > 0 && !isReloading)
             {
                 if (Time.time >= _nextFireTime)
                 { 
@@ -64,13 +63,13 @@ namespace WeaponSystem
 
         public void Reload()
         {
-            if (_isReloading || magazineAmmo == maxMagazineAmmo) return;
+            if (isReloading || magazineAmmo == maxMagazineAmmo) return;
 
             StartCoroutine(ReloadCoroutine());
         }
         private IEnumerator ReloadCoroutine()
         {
-            _isReloading = true;
+            isReloading = true;
 
             yield return new WaitForSeconds(reloadTime);
 
@@ -82,23 +81,12 @@ namespace WeaponSystem
 
             gui.UpdateAmmoDisplay();
 
-            _isReloading = false;
+            isReloading = false;
         }
         
         public void Scope()
         {
-            isScope = !isScope;
             
-            if (isScope)
-            {
-                _canShoot = true;
-                player.speed = _originalSpeed / 2;
-            }
-            else
-            {
-                _canShoot = false;
-                player.speed = _originalSpeed;
-            }
         }
     }
 }

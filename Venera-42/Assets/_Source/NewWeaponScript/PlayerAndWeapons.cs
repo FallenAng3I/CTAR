@@ -53,11 +53,9 @@ namespace _Source.NewWeaponScript
                 Debug.Log("Weapon equipped: " + weapon.weaponName);
             }
         }
-
-        //TODO Спросить как перенести этот скрипт и стоит ли
+        
         void Update()
         {
-            //это лучшее что я смог придумать
             if (currentWeapon != null)
             {
                 currentWeapon.Scope();

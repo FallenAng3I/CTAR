@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using WeaponSystem;
 
@@ -7,11 +8,26 @@ namespace PlayerSystem
     {
         public int health;
         public float speed;
+        private float currentSpeed;
         public GameObject weapon;
+        public Rifle rifle;
 
         private void Update()
         {
             WeaponView();
+            ReadSpeed();
+        }
+
+        private void ReadSpeed()
+        {
+            if (rifle.canShoot || rifle.isReloading)
+            {
+                speed = (float)2.5;
+            }
+            else
+            {
+                speed = 5;
+            }
         }
 
         public void WeaponView()

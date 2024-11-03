@@ -409,7 +409,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   speed: 5
+  speedScope: 2
   weapon: {fileID: 5007151996254369122}
+  rifle: {fileID: 7838373178846561828}
 --- !u!114 &7838373178846561828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,7 +431,7 @@ MonoBehaviour:
   reserveAmmo: 300
   maxReserveAmmno: 300
   reloadTime: 2
-  isScope: 0
+  canShoot: 0
   bulletPrefab: {fileID: 5341742223406746680, guid: 9c3cddd6060b7cc4eadfb9cefcf6e7db, type: 3}
   shootPivot: {fileID: 7941794540226078916}
   player: {fileID: 3813895837490246513}
@@ -568,15 +570,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8864860283874456169, guid: 9ca795e092c73ce41a948022787dfba1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.70710677
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8864860283874456169, guid: 9ca795e092c73ce41a948022787dfba1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.70710695
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8864860283874456169, guid: 9ca795e092c73ce41a948022787dfba1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000032782552
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8864860283874456169, guid: 9ca795e092c73ce41a948022787dfba1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
