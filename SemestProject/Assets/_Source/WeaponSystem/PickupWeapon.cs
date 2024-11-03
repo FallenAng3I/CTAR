@@ -1,11 +1,12 @@
 using PlayerSystem;
 using UnityEngine;
-using ViewSystem;
 
 namespace WeaponSystem
 {
     public class PickupRifle : MonoBehaviour
     {
+        public int ammoToAdd = 20; //Сколько патронов мы будем получать при повторном подборе оружия.
+        
         public Player player;
         public GameObject weaponView;
         
@@ -20,9 +21,16 @@ namespace WeaponSystem
                     playerRifle.GetComponent<Rifle>().enabled = true;
                     weaponView.gameObject.SetActive(true);
                 }
-                else if (playerRifle.GetComponent<Rifle>().enabled == true)
+                else if (playerRifle.GetComponent<Rifle>().enabled)
                 {
-                    playerRifle.reserveAmmo += 20;
+                    if (playerRifle.reserveAmmo + ammoToAdd <= playerRifle.maxReserveAmmno)
+                    {
+                        playerRifle.reserveAmmo += ammoToAdd;
+                    }
+                    else
+                    {
+                        playerRifle.reserveAmmo = playerRifle.maxReserveAmmno;
+                    }
                 }
                 
                 Destroy(gameObject);            

@@ -12,7 +12,7 @@ namespace PlayerSystem
         {
             ReadShoot();
             ReadReload();
-            ReadScope();
+            Scope();
         }
 
         private void ReadShoot()
@@ -26,14 +26,13 @@ namespace PlayerSystem
             }
         }
         
-        private void ReadScope()
+        private void Scope()
         {
             if (weapon.enabled)
             {
                 if (Input.GetKey(KeyCode.Mouse1))
                 {
                     weapon.canShoot = true;
-                    weapon.Scope();
                 }
                 else
                 {

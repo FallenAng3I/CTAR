@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using WeaponSystem;
@@ -10,7 +11,12 @@ namespace ViewSystem
         public TMP_Text maxAmmoView;
 
         public Rifle weapon;
-        
+
+        private void Update()
+        {
+            UpdateAmmoDisplay();
+        }
+
         public void UpdateAmmoDisplay()
         {
             ammoView.text = " " + weapon.magazineAmmo.ToString();

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using WeaponSystem;
 
@@ -8,7 +7,6 @@ namespace PlayerSystem
     {
         public int health;
         public float speed;
-        private float currentSpeed;
         public GameObject weapon;
         public Rifle rifle;
 
