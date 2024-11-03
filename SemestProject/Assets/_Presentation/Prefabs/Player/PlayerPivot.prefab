@@ -407,6 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5964995d59c283f429131814e442c6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   speed: 5
   weapon: {fileID: 5007151996254369122}
 --- !u!114 &7838373178846561828
@@ -421,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a0ee4d34a528684b8c216773264b60c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 50
   fireRate: 7
   magazineAmmo: 30
   maxMagazineAmmo: 30
