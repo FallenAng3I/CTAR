@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7887971486779964781}
   - component: {fileID: 1750007496165018840}
   m_Layer: 7
-  m_Name: Enemy
+  m_Name: MeleeEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4796484118099401953}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 1, z: 16}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
@@ -119,10 +119,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f89f5ce8de4e94d8fd1f900efdb7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  damage: 10
+  health: 2
+  damage: 1
   speed: 3.5
-  detectionRange: 10
+  detectionRange: 20
   player: {fileID: 3813895837490246513, guid: d7e4d7b3de0ce2648a9a0091f709c202, type: 3}
   attackRange: 5
   attackCooldown: 3

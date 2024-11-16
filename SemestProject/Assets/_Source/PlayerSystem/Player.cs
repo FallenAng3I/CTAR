@@ -1,3 +1,4 @@
+using InteractSystem;
 using UnityEngine;
 using WeaponSystem;
 
@@ -7,6 +8,7 @@ namespace PlayerSystem
     {
         public int health;
         public float speed;
+        public float interactRadius;
         public GameObject weapon;
         public Rifle rifle;
 
@@ -28,6 +30,21 @@ namespace PlayerSystem
             }
         }
 
+        public void Use()
+        {
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactRadius);
+
+            foreach (var hitCollider in hitColliders)
+            {
+                var interactable = hitCollider.GetComponent<IInteractable>();
+                if (interactable != null)
+                {
+                    interactable.Interact();
+                    break;
+                }
+            }
+        }
+
         public void WeaponView()
         {
             Rifle playerRifle = GetComponent<Rifle>();
@@ -38,12 +55,18 @@ namespace PlayerSystem
             }
         }
 
-        private void Death()
+        public void TakeDamage(int damage)
         {
+            health -= damage;
             if (health <= 0)
             {
-                Destroy(gameObject);
+                Death();
             }
+        }
+        
+        private void Death()
+        {
+            Destroy(gameObject);
         }
     }
 }

@@ -24,9 +24,7 @@ namespace EnemySystem
             {
                 if (_canAttack)
                 {
-                    //Debug.Log("MeleeEnemy атакует в ближнем бою!");
-                    player.health -= damage;
-
+                    player.TakeDamage(damage);
                     StartCoroutine(AttackCooldown());
                 }
             }

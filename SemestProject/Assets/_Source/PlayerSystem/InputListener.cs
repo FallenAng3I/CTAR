@@ -1,3 +1,4 @@
+using InteractSystem;
 using UnityEngine;
 using WeaponSystem;
 
@@ -8,10 +9,14 @@ namespace PlayerSystem
         public Player player;
         public Rifle weapon;
         
+        private float interactRange = 7f;
+        public LayerMask interactableLayer;
+        
         private void Update()
         {
             ReadShoot();
             ReadReload();
+            ReadUse();
             Scope();
         }
 
@@ -49,6 +54,14 @@ namespace PlayerSystem
                 {
                     weapon.Reload();
                 }            
+            }
+        }
+
+        private void ReadUse()
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                player.Use();
             }
         }
     }
