@@ -63,7 +63,7 @@ namespace PlayerSystem
         {
             if (_isDead) return;
             health -= damage;
-            Debug.Log($"Текущее здоровье: {health}");
+            //Debug.Log($"Текущее здоровье: {health}");
             
             if (health <= 0 && !_isDead)
             {
