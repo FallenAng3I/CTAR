@@ -5,7 +5,7 @@ namespace WeaponSystem
 {
     public class Rifle : MonoBehaviour
     {
-        [Header("AKS-74U Parameters")]
+        [Header("AKS-74U Config")]
         public int damage;
         public float fireRate;
         public int magazineAmmo;
@@ -13,13 +13,11 @@ namespace WeaponSystem
         public int reserveAmmo;
         public int maxReserveAmmno;
         public float reloadTime;
-
-        //public bool isScope = false;
+        
         public bool canShoot;
         public bool isReloading;
         private float _nextFireTime;
         
-        private Camera _mainCamera;
         [SerializeField] private GameObject bulletPrefab;
         [SerializeField] private Transform shootPivot;
         [SerializeField] private Bullet bullet;
@@ -51,7 +49,6 @@ namespace WeaponSystem
             else
             {
                 //TODO Добавить звук пустой обоймы
-                Debug.Log("Не могу стрелять!");
             }
         }
 

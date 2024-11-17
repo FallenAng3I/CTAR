@@ -13,8 +13,11 @@ namespace EnemySystem
         {
             if (IsPlayerInRange())
             {
-                PerformAttack();
                 MoveTowardsPlayer();
+                if (Vector3.Distance(transform.position, _player.position) <= attackRange)
+                {
+                    PerformAttack();
+                }
             }
         }
 

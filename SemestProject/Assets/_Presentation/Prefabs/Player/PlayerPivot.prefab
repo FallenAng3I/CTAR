@@ -444,6 +444,7 @@ MonoBehaviour:
   interactRadius: 4
   weapon: {fileID: 1594777250549371124}
   rifle: {fileID: 7838373178846561828}
+  deathScreenView: {fileID: 0}
 --- !u!114 &7838373178846561828
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using InteractSystem;
 using UnityEngine;
+using ViewSystem;
 using WeaponSystem;
 
 namespace PlayerSystem
@@ -9,11 +10,19 @@ namespace PlayerSystem
         public int health;
         public float speed;
         public float interactRadius;
+        private bool _isDead;
         public GameObject weapon;
+        
         public Rifle rifle;
+        public DeathScreenView deathScreenView;
 
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                TakeDamage(1);
+            }
+            
             WeaponView();
             ReadSpeed();
         }
@@ -57,16 +66,22 @@ namespace PlayerSystem
 
         public void TakeDamage(int damage)
         {
+            if (_isDead) return;
             health -= damage;
-            if (health <= 0)
+            Debug.Log($"Текущее здоровье: {health}");
+            
+            if (health <= 0 && !_isDead)
             {
+                _isDead = true;
                 Death();
-            }
+            }            
         }
-        
-        private void Death()
+
+        public void Death()
         {
-            Destroy(gameObject);
+            deathScreenView.ShowDeathScreen();
+            gameObject.SetActive(false);
+            Time.timeScale = 0f;
         }
         
         private void OnDrawGizmosSelected()

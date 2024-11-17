@@ -38,10 +38,7 @@ namespace EnemySystem
         } // Метод получения урона
         private void Death()
         {
-            if (health <= 0)
-            {
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
         } // Метод смерти. А вы что-то ещё ждали?
     }
 }
