@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace ViewSystem
 {
@@ -12,11 +13,10 @@ namespace ViewSystem
             Time.timeScale = 0;
         }
 
-        public void RestartLevel()
+        public void Restart()
         {
             Time.timeScale = 1;
-            UnityEngine.SceneManagement.SceneManager.LoadScene(
-                UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         public void ExitToMainMenu()

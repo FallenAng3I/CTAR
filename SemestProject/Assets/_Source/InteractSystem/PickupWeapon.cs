@@ -1,9 +1,10 @@
 using PlayerSystem;
 using UnityEngine;
+using WeaponSystem;
 
-namespace WeaponSystem
+namespace InteractSystem
 {
-    public class PickupRifle : MonoBehaviour
+    public class PickupWeapon : MonoBehaviour
     {
         public int ammoToAdd = 20; //Сколько патронов мы будем получать при повторном подборе оружия.
         

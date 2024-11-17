@@ -18,11 +18,6 @@ namespace PlayerSystem
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.H))
-            {
-                TakeDamage(1);
-            }
-            
             WeaponView();
             ReadSpeed();
         }
@@ -76,8 +71,14 @@ namespace PlayerSystem
                 Death();
             }            
         }
+        
+        public void Heal(int healAmount)
+        {
+            //if (_isDead) return;
+            health = healAmount;
+        }
 
-        public void Death()
+        private void Death()
         {
             deathScreenView.ShowDeathScreen();
             gameObject.SetActive(false);
