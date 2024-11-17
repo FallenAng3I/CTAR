@@ -1,3 +1,4 @@
+using MenuManager;
 using UnityEngine;
 using WeaponSystem;
 
@@ -7,6 +8,8 @@ namespace PlayerSystem
     {
         public Player player;
         public Rifle weapon;
+        public PauseMenu pause;
+        [SerializeField] public Texture2D cursorSprite;
         
         public LayerMask interactableLayer;
         
@@ -16,6 +19,7 @@ namespace PlayerSystem
             ReadReload();
             ReadUse();
             Scope();
+            ReadESC();
         }
 
         private void ReadShoot()
@@ -36,10 +40,16 @@ namespace PlayerSystem
                 if (Input.GetKey(KeyCode.Mouse1))
                 {
                     weapon.canShoot = true;
+                    
+                    Vector2 hotSpot = new Vector2(5f, 5f);
+                    Cursor.SetCursor(cursorSprite, hotSpot, CursorMode.Auto);
                 }
                 else
                 {
                     weapon.canShoot = false;
+                    
+                    Vector2 hotSpot = new Vector2(5f, 5f);
+                    Cursor.SetCursor(null, hotSpot, CursorMode.Auto);
                 }
             }
         }        
@@ -60,6 +70,24 @@ namespace PlayerSystem
             if (Input.GetKeyDown(KeyCode.E))
             {
                 player.Use();
+            }
+        }
+
+        private void ReadESC()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (player.isDead == false)
+                {
+                    if (pause.pauseGame)
+                    {
+                        pause.Resume();
+                    }
+                    else
+                    {
+                        pause.Pause();
+                    }
+                }
             }
         }
     }

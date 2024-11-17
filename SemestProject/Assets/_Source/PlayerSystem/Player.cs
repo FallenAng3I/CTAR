@@ -10,7 +10,7 @@ namespace PlayerSystem
         public int health;
         public float speed;
         public float interactRadius;
-        private bool _isDead;
+        public bool isDead;
         public GameObject weapon;
         
         public Rifle rifle;
@@ -61,13 +61,13 @@ namespace PlayerSystem
 
         public void TakeDamage(int damage)
         {
-            if (_isDead) return;
+            if (isDead) return;
             health -= damage;
             //Debug.Log($"Текущее здоровье: {health}");
             
-            if (health <= 0 && !_isDead)
+            if (health <= 0 && !isDead)
             {
-                _isDead = true;
+                isDead = true;
                 Death();
             }            
         }
