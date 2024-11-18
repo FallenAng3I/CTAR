@@ -44,5 +44,11 @@ namespace EnemySystem
         {
             agent.SetDestination(_player.position);
         }
+        
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(transform.position, attackRange);
+        }
     }
 }
