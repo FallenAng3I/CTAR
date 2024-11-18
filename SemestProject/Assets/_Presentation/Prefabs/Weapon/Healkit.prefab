@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287abc84f5970f34f92c7829f2a506ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healAmount: 3
+  player: {fileID: 3813895837490246513, guid: d7e4d7b3de0ce2648a9a0091f709c202, type: 3}
 --- !u!65 &1741760800517923592
 BoxCollider:
   m_ObjectHideFlags: 0
