@@ -12,7 +12,7 @@ namespace InteractSystem
         {
             if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
-                player.Heal(3);
+                player.Heal();
                 Destroy(gameObject); 
             }
         }

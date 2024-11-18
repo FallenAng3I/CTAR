@@ -72,9 +72,9 @@ namespace PlayerSystem
             }            
         }
 
-        public void Heal(int hp)
+        public void Heal()
         {
-            health = Mathf.Clamp(health + hp, 0, 3);
+            health = 3;
         }
 
         private void Death()
