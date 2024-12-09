@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoToAdd: 20
-  player: {fileID: 3813895837490246513, guid: d7e4d7b3de0ce2648a9a0091f709c202, type: 3}
+  player: {fileID: 6945545650267764676, guid: 6e10dd158f61a2d44bbc38e5a84c3b68, type: 3}
   weaponView: {fileID: 0}
 --- !u!65 &5311851189562910906
 BoxCollider:

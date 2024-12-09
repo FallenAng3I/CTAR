@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace _Source.PlayerSystem
+namespace PlayerSystem
 {
     public class PlayerRotator : MonoBehaviour
     {
