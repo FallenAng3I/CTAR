@@ -7,8 +7,8 @@ namespace ViewSystem
 {
     public class GUIView : MonoBehaviour
     {
-        public TMP_Text ammoView;
-        public TMP_Text maxAmmoView;
+        public TMP_Text ammoView;     // Отображение патронов в магазине
+        public TMP_Text maxAmmoView;  // Отображение патронов в резерве 
 
         public Rifle weapon;
 

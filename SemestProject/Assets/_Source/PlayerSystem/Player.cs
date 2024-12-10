@@ -7,11 +7,12 @@ namespace PlayerSystem
 {
     public class Player : MonoBehaviour
     {
-        public int health;
-        public float speed;
-        public float interactRadius;
-        public bool isDead;
-        public GameObject weapon;
+        public int health;              // Здоровье игрока  
+        public float speed;             // Скорость игрока  
+        public float interactRadius;    // Радиус для взаимодействия с предметами  
+        
+        public bool isDead;             
+        public GameObject weapon;       
         
         public Rifle rifle;
         public DeathScreenView deathScreenView;
@@ -53,7 +54,7 @@ namespace PlayerSystem
         {
             Rifle playerRifle = GetComponent<Rifle>();
 
-            if (playerRifle.GetComponent<Rifle>().enabled == true)
+            if (playerRifle.GetComponent<Rifle>().enabled)
             {
                 weapon.SetActive(true);
             }
@@ -63,7 +64,6 @@ namespace PlayerSystem
         {
             if (isDead) return;
             health -= damage;
-            //Debug.Log($"Текущее здоровье: {health}");
             
             if (health <= 0 && !isDead)
             {

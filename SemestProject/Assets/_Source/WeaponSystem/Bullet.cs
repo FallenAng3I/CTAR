@@ -18,9 +18,9 @@ namespace WeaponSystem
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.TryGetComponent<AEnemy>(out AEnemy enemy))
+            if (collision.gameObject.TryGetComponent(out AEnemy enemy))
             {
-                enemy.TakeDamage(damage); // Наносим урон
+                enemy.TakeDamage(damage);
             }
             
             Destroy(gameObject);

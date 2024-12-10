@@ -19,7 +19,7 @@ namespace PlayerSystem
             ReadReload();
             ReadUse();
             Scope();
-            ReadESC();
+            ReadEsc();
         }
 
         private void ReadShoot()
@@ -73,7 +73,7 @@ namespace PlayerSystem
             }
         }
 
-        private void ReadESC()
+        private void ReadEsc()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {

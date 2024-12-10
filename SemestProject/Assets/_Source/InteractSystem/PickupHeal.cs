@@ -6,7 +6,6 @@ namespace InteractSystem
     public class PickupHeal : MonoBehaviour
     {
         [SerializeField] private Player player;
-        //private int maxHealth = 3;
         
         private void OnTriggerEnter(Collider other)
         {

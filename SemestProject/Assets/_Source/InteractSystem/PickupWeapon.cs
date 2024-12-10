@@ -6,7 +6,7 @@ namespace InteractSystem
 {
     public class PickupWeapon : MonoBehaviour
     {
-        public int ammoToAdd = 20; //Сколько патронов мы будем получать при повторном подборе оружия.
+        public int ammoToAdd = 20;   //Сколько патронов мы будем получать при повторном подборе оружия.
         
         public Player player;
         public GameObject weaponView;
