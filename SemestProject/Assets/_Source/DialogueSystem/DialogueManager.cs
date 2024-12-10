@@ -63,13 +63,13 @@ namespace DialogueSystem
             dialogueText.text = slide.dialogueText;
         }
 
-        public void ShowNextSlide()
+        private void ShowNextSlide()
         {
             _currentSlideIndex++;
             ShowSlide();
         }
 
-        public void EndDialogue()
+        private void EndDialogue()
         {
             PlayerRotator rotator = player.GetComponent<PlayerRotator>();
             rotator.GetComponent<PlayerRotator>().enabled = true;

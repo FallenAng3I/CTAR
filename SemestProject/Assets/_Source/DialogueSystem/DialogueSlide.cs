@@ -9,10 +9,4 @@ namespace DialogueSystem
         public Sprite characterImage;      // Изображение персонажа 
         public string dialogueText;        // Текст реплики         
     }
-
-    [CreateAssetMenu(fileName = "NewDialogue", menuName = "Dialogue System/Dialogue")]
-    public class Dialogue : ScriptableObject
-    {
-        public DialogueSlide[] slides;
-    }
 }
