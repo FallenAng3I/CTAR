@@ -6,13 +6,13 @@ namespace WeaponSystem
     public class Rifle : MonoBehaviour
     {
         [Header("AKS-74U Config")]
-        public int damage;
-        public float fireRate;
-        public int magazineAmmo;
-        public int maxMagazineAmmo;
-        public int reserveAmmo;
-        public int maxReserveAmmno;
-        public float reloadTime;
+        public int damage;              // Урон                         
+        public float fireRate;          // Скорострельность             
+        public int magazineAmmo;        // Число патронов в магазине    
+        public int maxMagazineAmmo;     // Максимум патронов в магазине 
+        public int reserveAmmo;         // Число патронов в резерве     
+        public int maxReserveAmmno;     // Максимум патронов в резерве  
+        public float reloadTime;        // Скорость перезарядки         
         
         public bool canShoot;
         public bool isReloading;
@@ -24,7 +24,6 @@ namespace WeaponSystem
 
         public void Start()
         {
-            
         }
 
         public void Shoot()
@@ -48,7 +47,7 @@ namespace WeaponSystem
             }
             else
             {
-                //TODO Добавить звук пустой обоймы
+                // Звук пустой обоймы
             }
         }
 

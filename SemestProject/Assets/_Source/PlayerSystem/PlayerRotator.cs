@@ -5,11 +5,11 @@ namespace PlayerSystem
 {
     public class PlayerRotator : MonoBehaviour
     {
-        private Camera mainCamera;
+        private Camera _mainCamera;
 
         private void Awake()
         {
-            mainCamera = Camera.main;
+            _mainCamera = Camera.main;
         }
 
         private void Update()
@@ -20,7 +20,7 @@ namespace PlayerSystem
         private void RotateTowardsCursor()
         {
             Vector3 mousePosition = Mouse.current.position.ReadValue();
-            Ray ray = mainCamera.ScreenPointToRay(mousePosition);
+            Ray ray = _mainCamera.ScreenPointToRay(mousePosition);
 
             if (Physics.Raycast(ray, out RaycastHit hitInfo))
             {

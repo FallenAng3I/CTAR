@@ -6,10 +6,11 @@ namespace EnemySystem
 {
     public abstract class AEnemy : MonoBehaviour
     {
-        public int health;
-        public int damage;
-        public float speed;
-        public float detectionRange;
+        public int health;             // Здоровье врага    
+        public int damage;             // Урон врага        
+        public float speed;            // Скорость врага    
+        public float detectionRange;   // Радиус обнаружения
+        
         protected Transform _player;
         protected NavMeshAgent agent;
         public Player player;

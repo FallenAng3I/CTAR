@@ -9,56 +9,55 @@ namespace DialogueSystem
     {
         public static DialogueManager Instance { get; private set; } // Синглтон
 
-        public GameObject dialogueWindow;  // Родительский объект диалогового окна
-        public Image characterImage;
-        public TMP_Text characterNameText;
-        public TMP_Text dialogueText;
-        public Button nextButton;
+        public GameObject dialogueWindow;   
+        public Image characterImage;        
+        public TMP_Text characterNameText;  
+        public TMP_Text dialogueText;       
+        public Button nextButton;           
         
         [SerializeField] public PlayerRotator player;
-        private Dialogue currentDialogue;
-        private int currentSlideIndex;
+        private Dialogue _currentDialogue;
+        private int _currentSlideIndex;
 
         private void Awake()
         {
-            // Реализация Singleton
             if (Instance == null)
             {
                 Instance = this;
             }
             else
             {
-                Destroy(gameObject); // Удаляем дубликат
+                Destroy(gameObject);
                 return;
             }
 
             nextButton.onClick.AddListener(ShowNextSlide);
-            dialogueWindow.SetActive(false); // Скрываем окно при старте
+            dialogueWindow.SetActive(false);
         }
 
         public void StartDialogue(Dialogue dialogue)
         {
-            currentDialogue = dialogue;
-            currentSlideIndex = 0;
+            _currentDialogue = dialogue;
+            _currentSlideIndex = 0;
 
             PlayerRotator rotator = player.GetComponent<PlayerRotator>();
             rotator.GetComponent<PlayerRotator>().enabled = false;
             
             Time.timeScale = 0f;
 
-            dialogueWindow.SetActive(true); // Показываем окно
+            dialogueWindow.SetActive(true);
             ShowSlide();
         }
 
         private void ShowSlide()
         {
-            if (currentSlideIndex >= currentDialogue.slides.Length)
+            if (_currentSlideIndex >= _currentDialogue.slides.Length)
             {
                 EndDialogue();
                 return;
             }
 
-            var slide = currentDialogue.slides[currentSlideIndex];
+            var slide = _currentDialogue.slides[_currentSlideIndex];
             characterImage.sprite = slide.characterImage;
             characterNameText.text = slide.characterName;
             dialogueText.text = slide.dialogueText;
@@ -66,7 +65,7 @@ namespace DialogueSystem
 
         public void ShowNextSlide()
         {
-            currentSlideIndex++;
+            _currentSlideIndex++;
             ShowSlide();
         }
 
@@ -75,9 +74,9 @@ namespace DialogueSystem
             PlayerRotator rotator = player.GetComponent<PlayerRotator>();
             rotator.GetComponent<PlayerRotator>().enabled = true;
             
-            Time.timeScale = 1f; // Возобновление времени
-            dialogueWindow.SetActive(false); // Скрываем окно
-            currentDialogue = null;
+            Time.timeScale = 1f;
+            dialogueWindow.SetActive(false);
+            _currentDialogue = null;
         }
     }
 }

@@ -28,7 +28,7 @@ namespace ViewSystem
                 health1.SetActive(true);
                 health2.SetActive(false);
             }
-            else if (player.health == 1 || player.health == 0)
+            else if (player.health is 1 or 0)
             {
                 health1.SetActive(false);
                 health2.SetActive(true);
