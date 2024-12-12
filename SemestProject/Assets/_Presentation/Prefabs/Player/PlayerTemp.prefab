@@ -286,10 +286,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   fireRate: 7
-  magazineAmmo: 30
-  maxMagazineAmmo: 30
-  reserveAmmo: 300
-  maxReserveAmmno: 300
+  magazineAmmo: 20
+  maxMagazineAmmo: 20
+  reserveAmmo: 90
+  maxReserveAmmno: 90
   reloadTime: 2
   canShoot: 0
   isReloading: 0

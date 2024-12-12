@@ -50,10 +50,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   damage: 2
-  speed: 7.5
+  speed: 7
   detectionRange: 15
   player: {fileID: 6945545650267764676, guid: 6e10dd158f61a2d44bbc38e5a84c3b68, type: 3}
-  explosionRange: 6.66
+  explosionRange: 5
   timeDetonate: 2
 --- !u!33 &6524432304066827832
 MeshFilter:
