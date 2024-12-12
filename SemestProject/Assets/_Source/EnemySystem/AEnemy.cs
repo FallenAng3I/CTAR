@@ -10,6 +10,7 @@ namespace EnemySystem
         public int damage;             // Урон врага        
         public float speed;            // Скорость врага    
         public float detectionRange;   // Радиус обнаружения
+        protected bool isDead;
         
         protected Transform _player;
         protected NavMeshAgent agent;
@@ -31,15 +32,18 @@ namespace EnemySystem
 
         public void TakeDamage(int damage)
         {
+            if (isDead) return;
             health -= damage;
             if (health <= 0)
             {
+                isDead = true;
                 Death();
             }
-        } // Метод получения урона
-        private void Death()
+        }
+
+        protected virtual void Death()
         {
             Destroy(gameObject);
-        } // Метод смерти. А вы что-то ещё ждали?
+        }
     }
 }

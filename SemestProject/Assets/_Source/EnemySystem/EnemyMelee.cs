@@ -7,6 +7,7 @@ namespace EnemySystem
     {
         public float attackRange;       // Радиус атаки 
         public float attackCooldown;    // Кулдаун атаки
+        
         private bool _canAttack = true;
         
         private void Update()

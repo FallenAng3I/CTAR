@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1285370550521830467}
-  - component: {fileID: 7887971486779964781}
+  - component: {fileID: 7006353039676518754}
   - component: {fileID: 6524432304066827832}
   - component: {fileID: 8170121530770356309}
   - component: {fileID: 4348490369045232662}
   - component: {fileID: 1750007496165018840}
   m_Layer: 7
-  m_Name: MeleeEnemy
+  m_Name: ExplosiveEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7887971486779964781
+--- !u!114 &7006353039676518754
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,16 +45,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 4796484118099401953}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4f89f5ce8de4e94d8fd1f900efdb7c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 3866da506285d7b429e12a4dde302d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
-  damage: 1
-  speed: 3.5
-  detectionRange: 20
+  health: 1
+  damage: 2
+  speed: 7.5
+  detectionRange: 15
   player: {fileID: 6945545650267764676, guid: 6e10dd158f61a2d44bbc38e5a84c3b68, type: 3}
-  attackRange: 2.5
-  attackCooldown: 3
+  explosionRange: 6.66
+  timeDetonate: 2
 --- !u!33 &6524432304066827832
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -83,7 +83,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f942b4621c42abd499e61af7a23d78a9, type: 2}
+  - {fileID: 2100000, guid: 0cfd1736b8478144c9b6af041f4669fb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

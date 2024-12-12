@@ -8,8 +8,8 @@ namespace MenuManager
 {
     public class SceneTrigger : MonoBehaviour
     {
-        [SerializeField] private string targetScene;      // Название сцены для перехода
-        [SerializeField] private float fadeDuration = 1f; // Длительность затемнения    
+        [SerializeField] private string targetScene;        // Название сцены для перехода
+        [SerializeField] private float fadeDuration = 1f;   // Длительность затемнения    
         
         [SerializeField] private RawImage fadeImage;
         [SerializeField] private CameraFollow player;
