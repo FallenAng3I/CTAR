@@ -11,7 +11,7 @@ namespace EnemySystem
         public float attackCooldown;         // Кулдаун атаки
 
         public Transform shootPivot;
-        public GameObject projectilePrefab;  // Префаб для проджектайла
+        public GameObject projectilePrefab;
         public Projectile projectile;
         
         private bool _canAttack = true;
