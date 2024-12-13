@@ -1,63 +1,82 @@
 using System.Collections;
 using UnityEngine;
+using WeaponSystem;
 
 namespace EnemySystem
 {
     public class EnemyRange : AEnemy
     {
-        public float attackRange;       // Радиус атаки
-        public float attackCooldown;    // Кулдаун атаки
-        public GameObject projectilePrefab; // Префаб для проджектайла
+        public float attackRange;            // Радиус атаки
+        public float stopRange;              // Радиус, на котором противник останавливается
+        public float attackCooldown;         // Кулдаун атаки
+
+        public Transform shootPivot;
+        public GameObject projectilePrefab;  // Префаб для проджектайла
+        public Projectile projectile;
         
         private bool _canAttack = true;
-        private float _projectileSpeed = 20f;  // Скорость полета пули
 
         private void Update()
         {
             if (IsPlayerInRange())
             {
-                MoveTowardsPlayer();
-                RotateTowardsPlayer();
-                if (_canAttack && Vector3.Distance(transform.position, _player.position) <= attackRange)
+                float distanceToPlayer = Vector3.Distance(transform.position, _player.position);
+
+                if (distanceToPlayer > stopRange)
                 {
-                    StartCoroutine(Shoot());
+                    MoveTowardsPlayer();
                 }
+                else
+                {
+                    agent.isStopped = true;
+                    RotateTowardsPlayer();
+                    if (_canAttack && distanceToPlayer <= attackRange)
+                    {
+                        StartCoroutine(ShootProjectile());
+                    }
+                }
+            }
+            else
+            {
+                agent.isStopped = false;
             }
         }
 
         private void MoveTowardsPlayer()
         {
+            agent.isStopped = false;
             agent.SetDestination(_player.position);
         }
 
         private void RotateTowardsPlayer()
         {
             Vector3 direction = (_player.position - transform.position).normalized;
-            
             Quaternion lookRotation = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * speed);
         }
 
-        private IEnumerator Shoot()
+        private IEnumerator ShootProjectile()
         {
             _canAttack = false;
-            
-            GameObject projectileInstance = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            Rigidbody projectileRb = projectileInstance.GetComponent<Rigidbody>();
-            
-            Vector3 direction = (_player.position - transform.position).normalized;
-            projectileRb.velocity = direction * _projectileSpeed;
-            
-            Destroy(projectileInstance, 5f); // Уничтожаем пулю через 5 секунд
-            
+
+            GameObject projectiles = Instantiate(projectilePrefab, shootPivot.position, shootPivot.rotation);
+                    
+            Projectile bulletComponent = projectiles.GetComponent<Projectile>();
+            bulletComponent.damage = damage;
+                    
+            Rigidbody bulletRb = projectiles.GetComponent<Rigidbody>();
+            bulletRb.velocity = projectiles.transform.forward * projectile.speed;
+
             yield return new WaitForSeconds(attackCooldown);
             _canAttack = true;
         }
 
         private void OnDrawGizmosSelected()
         {
-            Gizmos.color = Color.blue;
+            Gizmos.color = Color.cyan;
             Gizmos.DrawWireSphere(transform.position, attackRange);
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position, stopRange);
         }
         
         protected override void PerformAttack()

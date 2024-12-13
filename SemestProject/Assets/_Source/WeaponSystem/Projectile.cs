@@ -1,4 +1,3 @@
-using EnemySystem;
 using PlayerSystem;
 using UnityEngine;
 
@@ -16,9 +15,9 @@ namespace WeaponSystem
             Destroy(gameObject, lifetime);
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter(Collider other)
         {
-            if (collision.gameObject.TryGetComponent(out Player player))
+            if (other.gameObject.TryGetComponent(out Player player))
             {
                 player.TakeDamage(damage);
             }
