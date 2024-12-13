@@ -11,7 +11,7 @@ namespace WeaponSystem
         public int magazineAmmo;        // Число патронов в магазине    
         public int maxMagazineAmmo;     // Максимум патронов в магазине 
         public int reserveAmmo;         // Число патронов в резерве     
-        public int maxReserveAmmno;     // Максимум патронов в резерве  
+        public int maxReserveAmmo;      // Максимум патронов в резерве  
         public float reloadTime;        // Скорость перезарядки         
         
         public bool canShoot;
@@ -57,14 +57,15 @@ namespace WeaponSystem
 
             StartCoroutine(ReloadCoroutine());
         }
+        
         private IEnumerator ReloadCoroutine()
         {
             isReloading = true;
 
             yield return new WaitForSeconds(reloadTime);
 
-            int neededAmmo = maxMagazineAmmo - magazineAmmo;
-            int ammoToReload = Mathf.Min(neededAmmo, reserveAmmo);
+            var neededAmmo = maxMagazineAmmo - magazineAmmo;
+            var ammoToReload = Mathf.Min(neededAmmo, reserveAmmo);
 
             magazineAmmo += ammoToReload;
             reserveAmmo -= ammoToReload;

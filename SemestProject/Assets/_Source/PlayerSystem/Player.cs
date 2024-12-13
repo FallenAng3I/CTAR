@@ -35,18 +35,33 @@ namespace PlayerSystem
             }
         }
 
-        public void Use()
+        public void Use() 
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactRadius);
+            Vector3 playerPosition = transform.position;
+            float minDistance = Mathf.Infinity;
+            IInteractable closestInteractable = null;
+            
+            Collider[] hitColliders = Physics.OverlapBox
+                (playerPosition + transform.forward * interactRadius / 2,
+                new Vector3(interactRadius, interactRadius, interactRadius));
 
             foreach (var hitCollider in hitColliders)
             {
                 var interactable = hitCollider.GetComponent<IInteractable>();
                 if (interactable != null)
                 {
-                    interactable.Interact();
-                    break;
+                    float distance = Vector3.Distance(playerPosition, hitCollider.transform.position);
+                    if (distance < minDistance)
+                    {
+                        minDistance = distance;
+                        closestInteractable = interactable;
+                    }
                 }
+            }
+            
+            if (closestInteractable != null)
+            {
+                closestInteractable.Interact();
             }
         }
 
@@ -87,7 +102,8 @@ namespace PlayerSystem
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(transform.position, interactRadius);
+            Vector3 size = new Vector3(interactRadius, interactRadius, interactRadius);
+            Gizmos.DrawWireCube(transform.position + transform.forward * interactRadius / 2, size);
         }
     }
 }

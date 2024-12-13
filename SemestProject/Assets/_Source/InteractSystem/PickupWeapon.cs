@@ -24,13 +24,13 @@ namespace InteractSystem
                 }
                 else if (playerRifle.GetComponent<Rifle>().enabled)
                 {
-                    if (playerRifle.reserveAmmo + ammoToAdd <= playerRifle.maxReserveAmmno)
+                    if (playerRifle.reserveAmmo + ammoToAdd <= playerRifle.maxReserveAmmo)
                     {
                         playerRifle.reserveAmmo += ammoToAdd;
                     }
                     else
                     {
-                        playerRifle.reserveAmmo = playerRifle.maxReserveAmmno;
+                        playerRifle.reserveAmmo = playerRifle.maxReserveAmmo;
                     }
                 }
                 
