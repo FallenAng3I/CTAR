@@ -3,17 +3,14 @@ using UnityEngine;
 
 namespace InteractSystem
 {
-    public class PickupHeal : MonoBehaviour
+    public class PickupHeal : MonoBehaviour, IInteractable
     {
         [SerializeField] private Player player;
-        
-        private void OnTriggerEnter(Collider other)
+
+        public void Interact()
         {
-            if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
-            {
-                player.Heal();
-                Destroy(gameObject); 
-            }
+            player.Heal();
+            Destroy(gameObject); 
         }
     }
 }

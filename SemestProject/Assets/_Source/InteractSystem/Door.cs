@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace InteractSystem
@@ -6,6 +7,10 @@ namespace InteractSystem
     {
         [SerializeField] private Animator myDoor;
         [SerializeField] private bool isOpen;
+
+        private void Start()
+        {
+        }
 
         public void Interact()
         {

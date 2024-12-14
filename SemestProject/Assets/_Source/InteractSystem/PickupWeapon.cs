@@ -3,17 +3,15 @@ using WeaponSystem;
 
 namespace InteractSystem
 {
-    public class PickupWeapon : MonoBehaviour
+    public class PickupWeapon : MonoBehaviour, IInteractable
     {
         public int ammoToAdd = 20;   //Сколько патронов мы будем получать при повторном подборе оружия.
 
         public Rifle rifle;
         public GameObject weaponView;
-        
-        private void OnTriggerEnter(Collider other)
+
+        public void Interact()
         {
-            if (other.gameObject.layer != LayerMask.NameToLayer("Player")) return;
-            
             if (rifle.enabled == false)
             {
                 rifle.enabled = true;
