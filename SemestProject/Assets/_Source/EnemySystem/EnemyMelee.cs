@@ -12,17 +12,16 @@ namespace EnemySystem
         
         private void Update()
         {
-            if (IsPlayerInRange())
+            if (!IsPlayerInRange()) return;
+            
+            MoveTowardsPlayer();
+            if (Vector3.Distance(transform.position, _player.position) <= attackRange)
             {
-                MoveTowardsPlayer();
-                if (Vector3.Distance(transform.position, _player.position) <= attackRange)
-                {
-                    PerformAttack();
-                }
+                PerformAttack();
             }
         }
 
-        protected override void PerformAttack()
+        private void PerformAttack()
         {
             if (IsPlayerInRange() && Vector3.Distance(transform.position, _player.position) < attackRange)
             {

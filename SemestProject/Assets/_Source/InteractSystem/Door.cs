@@ -9,13 +9,14 @@ namespace InteractSystem
 
         public void Interact()
         {
-            if (isOpen)
+            switch (isOpen)
             {
-                myDoor.SetTrigger("Close");
-            }
-            else if (!isOpen)
-            {
-                myDoor.SetTrigger("Open");
+                case true:
+                    myDoor.SetTrigger("Close");
+                    break;
+                case false:
+                    myDoor.SetTrigger("Open");
+                    break;
             }
             
             isOpen = !isOpen;

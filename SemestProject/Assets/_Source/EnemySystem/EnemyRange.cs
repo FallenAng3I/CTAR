@@ -78,10 +78,5 @@ namespace EnemySystem
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(transform.position, stopRange);
         }
-        
-        protected override void PerformAttack()
-        {
-            // Взрывной враг не использует атаку напрямую, только детонацию
-        }
     }
 }

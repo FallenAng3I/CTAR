@@ -8,6 +8,7 @@ namespace InteractSystem
         [SerializeField] private GameObject playerCanisterModel; // Модель канистры на игроке
         [SerializeField] private Transform dropPosition;         // Точка сброса канистры
         [SerializeField] private Rifle rifle;                    // Оружие игрока
+        [SerializeField] private GameObject gui;
 
         private bool _isCarried;
 
@@ -33,6 +34,7 @@ namespace InteractSystem
 
             playerCanisterModel.SetActive(true);
             rifle.enabled = false;
+            gui.SetActive(false);
         }
 
         public void DropCanister()
@@ -47,6 +49,7 @@ namespace InteractSystem
 
             playerCanisterModel.SetActive(false);
             rifle.enabled = true;
+            gui.SetActive(true);
         }
 
     }

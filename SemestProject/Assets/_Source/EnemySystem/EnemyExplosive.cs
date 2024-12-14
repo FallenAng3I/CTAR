@@ -12,26 +12,25 @@ namespace EnemySystem
 
         private void Update()
         {
-            if (IsPlayerInRange())
+            if (!IsPlayerInRange()) return;
+            
+            MoveTowardsPlayer();
+            if (Vector3.Distance(transform.position, _player.position) <= explosionRange && !_isExploding)
             {
-                MoveTowardsPlayer();
-                if (Vector3.Distance(transform.position, _player.position) <= explosionRange && !_isExploding)
-                {
-                    StartCoroutine(Detonate());
-                }
+                StartCoroutine(Detonate());
             }
         }
 
-        public IEnumerator Detonate()
+        private IEnumerator Detonate()
         {
             _isExploding = true;
             agent.isStopped = true;
 
             yield return new WaitForSeconds(timeDetonate);
             
-            Collider[] hitObjects = Physics.OverlapSphere(transform.position, explosionRange);
+            var hitObjects = Physics.OverlapSphere(transform.position, explosionRange);
     
-            foreach (Collider hitObject in hitObjects)
+            foreach (var hitObject in hitObjects)
             {
                 hitObject.gameObject.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
             }
@@ -46,9 +45,9 @@ namespace EnemySystem
         
         protected override void Death()
         {
-            Collider[] hitObjects = Physics.OverlapSphere(transform.position, explosionRange);
+            var hitObjects = Physics.OverlapSphere(transform.position, explosionRange);
     
-            foreach (Collider hitObject in hitObjects)
+            foreach (var hitObject in hitObjects)
             {
                 hitObject.gameObject.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
             }
@@ -60,11 +59,6 @@ namespace EnemySystem
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, explosionRange);
-        }
-        
-        protected override void PerformAttack()
-        {
-            // Взрывной враг не использует атаку напрямую, только детонацию
         }
     }
 }

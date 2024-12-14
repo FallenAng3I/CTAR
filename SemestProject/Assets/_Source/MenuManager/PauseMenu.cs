@@ -12,8 +12,7 @@ namespace MenuManager
         
         public void Pause()
         {
-            PlayerRotator rotator = player.GetComponent<PlayerRotator>();
-            rotator.GetComponent<PlayerRotator>().enabled = false;
+            player.enabled = false;
             
             pauseMenu.SetActive(true);
             Time.timeScale = 0f;
@@ -22,8 +21,7 @@ namespace MenuManager
         
         public void Resume()
         {
-            PlayerRotator rotator = player.GetComponent<PlayerRotator>();
-            rotator.GetComponent<PlayerRotator>().enabled = true;
+            player.enabled = true;
             
             pauseMenu.SetActive(false);
             Time.timeScale = 1f;

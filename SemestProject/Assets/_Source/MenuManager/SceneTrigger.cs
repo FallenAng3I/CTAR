@@ -18,9 +18,7 @@ namespace MenuManager
         {
             if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
-                CameraFollow rotator = player.GetComponent<CameraFollow>();
-                rotator.GetComponent<CameraFollow>().enabled = false;
-                
+                player.enabled = false;
                 StartCoroutine(FadeAndSwitchScene());
             }
         }

@@ -40,8 +40,7 @@ namespace DialogueSystem
             _currentDialogue = dialogue;
             _currentSlideIndex = 0;
 
-            PlayerRotator rotator = player.GetComponent<PlayerRotator>();
-            rotator.GetComponent<PlayerRotator>().enabled = false;
+            player.enabled = false;
             
             Time.timeScale = 0f;
 
@@ -71,8 +70,7 @@ namespace DialogueSystem
 
         private void EndDialogue()
         {
-            PlayerRotator rotator = player.GetComponent<PlayerRotator>();
-            rotator.GetComponent<PlayerRotator>().enabled = true;
+            player.enabled = true;
             
             Time.timeScale = 1f;
             dialogueWindow.SetActive(false);

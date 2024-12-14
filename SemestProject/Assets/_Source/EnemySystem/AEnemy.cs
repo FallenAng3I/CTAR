@@ -28,8 +28,6 @@ namespace EnemySystem
             return Vector3.Distance(transform.position, _player.position) <= detectionRange;
         }
         
-        protected abstract void PerformAttack();
-
         public void TakeDamage(int damage)
         {
             if (_isDead) return;

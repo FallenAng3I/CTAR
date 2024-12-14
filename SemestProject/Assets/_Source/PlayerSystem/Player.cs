@@ -10,7 +10,8 @@ namespace PlayerSystem
         public int health;              // Здоровье игрока  
         public float speed;             // Скорость игрока  
         public float interactRadius;    // Радиус для взаимодействия с предметами  
-        
+
+        public int keys = 0;
         public bool isDead;             
         public GameObject weapon;
         

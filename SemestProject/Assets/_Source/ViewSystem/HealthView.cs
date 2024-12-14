@@ -23,20 +23,20 @@ namespace ViewSystem
 
         private void HealthCheck()
         {
-            if (player.health == 2)
+            switch (player.health)
             {
-                health1.SetActive(true);
-                health2.SetActive(false);
-            }
-            else if (player.health is 1 or 0)
-            {
-                health1.SetActive(false);
-                health2.SetActive(true);
-            }
-            else
-            {
-                health1.SetActive(false);
-                health2.SetActive(false);
+                case 2:
+                    health1.SetActive(true);
+                    health2.SetActive(false);
+                    break;
+                case 1 or 0:
+                    health1.SetActive(false);
+                    health2.SetActive(true);
+                    break;
+                default:
+                    health1.SetActive(false);
+                    health2.SetActive(false);
+                    break;
             }
         }
     }
