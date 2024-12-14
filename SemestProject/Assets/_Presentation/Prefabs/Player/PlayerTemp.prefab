@@ -407,6 +407,7 @@ MonoBehaviour:
   health: 3
   speed: 5
   interactRadius: 4
+  keys: 0
   isDead: 0
   weapon: {fileID: 6211189110735314102}
   rifle: {fileID: 6476310712846163458}
@@ -418,7 +419,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8191296217799220694}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a0ee4d34a528684b8c216773264b60c, type: 3}
   m_Name: 

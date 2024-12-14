@@ -53,7 +53,7 @@ MonoBehaviour:
   damage: 1
   speed: 3.5
   detectionRange: 20
-  player: {fileID: 6945545650267764676, guid: 6e10dd158f61a2d44bbc38e5a84c3b68, type: 3}
+  player: {fileID: 0}
   attackRange: 2.5
   attackCooldown: 3
 --- !u!33 &6524432304066827832
