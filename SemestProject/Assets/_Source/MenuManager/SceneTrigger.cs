@@ -27,6 +27,7 @@ namespace MenuManager
 
         private IEnumerator FadeAndSwitchScene()
         {
+            fadeImage.gameObject.SetActive(true);
             yield return StartCoroutine(Fade(1));
             
             SceneManager.LoadScene(targetScene);

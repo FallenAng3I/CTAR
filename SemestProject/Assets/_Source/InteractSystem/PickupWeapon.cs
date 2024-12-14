@@ -15,7 +15,7 @@ namespace InteractSystem
         {
             if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
-                Rifle playerRifle = player.GetComponent<Rifle>();
+                var playerRifle = player.GetComponent<Rifle>();
                 
                 if (playerRifle.GetComponent<Rifle>().enabled == false)
                 {
