@@ -12,10 +12,11 @@ namespace PlayerSystem
         public float interactRadius;    // Радиус для взаимодействия с предметами  
         
         public bool isDead;             
-        public GameObject weapon;       
+        public GameObject weapon;
         
         public Rifle rifle;
         public DeathScreenView deathScreenView;
+        private Canister _currentCanister;
 
         private void Update()
         {
@@ -35,41 +36,47 @@ namespace PlayerSystem
             }
         }
 
-        public void Use() 
+        //НИЧЕГО НЕ ТРОГАТЬ В ЭТОМ МЕТОДЕ, ВСЁ РАБОТАЕТ И СЛАВА БОГУ!
+        public void Use()
         {
-            Vector3 playerPosition = transform.position;
-            float minDistance = Mathf.Infinity;
-            IInteractable closestInteractable = null;
+            if (_currentCanister != null)
+            {
+                _currentCanister.DropCanister();
+                _currentCanister = null;
+                return;
+            }
             
-            Collider[] hitColliders = Physics.OverlapBox
-                (playerPosition + transform.forward * interactRadius / 2,
-                new Vector3(interactRadius, interactRadius, interactRadius));
+            var playerPosition = transform.position;
+            var minDistance = Mathf.Infinity;
+            IInteractable closestInteractable = null;
+
+            var hitColliders = Physics.OverlapBox(
+                playerPosition + transform.forward * interactRadius / 2,
+                new Vector3(interactRadius, interactRadius, interactRadius)
+            );
 
             foreach (var hitCollider in hitColliders)
             {
                 var interactable = hitCollider.GetComponent<IInteractable>();
-                if (interactable != null)
-                {
-                    float distance = Vector3.Distance(playerPosition, hitCollider.transform.position);
-                    if (distance < minDistance)
-                    {
-                        minDistance = distance;
-                        closestInteractable = interactable;
-                    }
-                }
+                var distance = Vector3.Distance(playerPosition, hitCollider.transform.position);
+                if (interactable == null) continue;
+                if (!(distance < minDistance)) continue;
+                minDistance = distance;
+                closestInteractable = interactable;
             }
-            
-            if (closestInteractable != null)
+
+            if (closestInteractable == null) return;
+            closestInteractable.Interact();
+                
+            if (closestInteractable is Canister canister)
             {
-                closestInteractable.Interact();
+                _currentCanister = canister;
             }
         }
 
-        public void WeaponView()
+        private void WeaponView()
         {
-            Rifle playerRifle = GetComponent<Rifle>();
-
-            if (playerRifle.GetComponent<Rifle>().enabled)
+            if (rifle.enabled)
             {
                 weapon.SetActive(true);
             }
@@ -79,12 +86,10 @@ namespace PlayerSystem
         {
             if (isDead) return;
             health -= damage;
-            
-            if (health <= 0 && !isDead)
-            {
-                isDead = true;
-                Death();
-            }            
+
+            if (health > 0 || isDead) return;
+            isDead = true;
+            Death();
         }
 
         public void Heal()

@@ -6,53 +6,50 @@ namespace InteractSystem
     public class Canister : MonoBehaviour, IInteractable
     {
         [SerializeField] private GameObject playerCanisterModel; // Модель канистры на игроке
-        [SerializeField] private GameObject playerRifle;         // Компонент оружия игрока
         [SerializeField] private Transform dropPosition;         // Точка сброса канистры
+        [SerializeField] private Rifle rifle;                    // Оружие игрока
 
-        private bool _isCarried; // В руках ли канистра
+        private bool _isCarried;
 
         public void Interact()
         {
             if (_isCarried)
             {
-                DropCanister(); // Если канистра в руках, сбросить её
+                DropCanister();
             }
             else
             {
-                PickUpCanister(); // Если канистра на земле, поднять её
+                PickUpCanister();
             }
         }
 
         private void PickUpCanister()
         {
+            if (_isCarried) return;
+            
             _isCarried = true;
-
-            // Скрываем канистру в мире
+            
             gameObject.SetActive(false);
 
-            // Включаем модель канистры на игроке
             playerCanisterModel.SetActive(true);
-
-            // Выключаем оружие игрока
-            playerRifle.GetComponent<Rifle>().enabled = false;
+            rifle.enabled = false;
         }
 
-        private void DropCanister()
+        public void DropCanister()
         {
+            if (!_isCarried) return;
+            
             _isCarried = false;
-
-            // Сбрасываем канистру перед игроком
+            
             transform.position = dropPosition.position;
             transform.rotation = dropPosition.rotation;
-
-            // Показываем канистру в мире
             gameObject.SetActive(true);
 
-            // Выключаем модель канистры на игроке
             playerCanisterModel.SetActive(false);
-
-            // Включаем оружие игрока
-            playerRifle.GetComponent<Rifle>().enabled = true;
+            rifle.enabled = true;
         }
+
     }
 }
+
+
