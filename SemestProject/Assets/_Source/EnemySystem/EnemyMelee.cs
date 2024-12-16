@@ -21,13 +21,20 @@ namespace EnemySystem
             }
         }
 
+        private new bool IsPlayerInRange() // Метод обнаружения игрока
+        {
+            return Vector3.Distance(transform.position, _player.position) <= detectionRange;
+        }
+
         private void PerformAttack()
         {
             if (IsPlayerInRange() && Vector3.Distance(transform.position, _player.position) < attackRange)
             {
                 if (_canAttack)
                 {
+                    animator.SetTrigger("Punch");
                     player.TakeDamage(damage);
+                    agent.isStopped = true;
                     StartCoroutine(AttackCooldown());
                 }
             }
@@ -37,11 +44,14 @@ namespace EnemySystem
         {
             _canAttack = false;
             yield return new WaitForSeconds(attackCooldown);
+            animator.SetTrigger("Punched");
             _canAttack = true;
+            agent.isStopped = false;
         }
         
         private void MoveTowardsPlayer()
         {
+            animator.SetBool("isAtacking", true);
             agent.SetDestination(_player.position);
         }
         

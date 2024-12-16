@@ -12,6 +12,7 @@ namespace EnemySystem
         public float detectionRange;   // Радиус обнаружения
         private bool _isDead;
         
+        protected Animator animator;
         protected Transform _player;
         protected NavMeshAgent agent;
         public Player player;
@@ -21,6 +22,11 @@ namespace EnemySystem
             _player = FindObjectOfType<Player>().transform;
             agent = GetComponent<NavMeshAgent>();
             agent.speed = speed;
+        }
+        
+        private void Awake()
+        {
+            animator = GetComponent<Animator>();
         }
         
         protected bool IsPlayerInRange() // Метод обнаружения игрока
