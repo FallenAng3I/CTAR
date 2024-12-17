@@ -6,6 +6,7 @@ namespace PlayerSystem
     public class PlayerRotator : MonoBehaviour
     {
         private Camera _mainCamera;
+        [SerializeField] private float offsetRotationY;
 
         private void Awake()
         {
@@ -28,7 +29,9 @@ namespace PlayerSystem
                 targetPosition.y = transform.position.y;
                 Vector3 direction = targetPosition - transform.position;
                 Quaternion rotation = Quaternion.LookRotation(direction);
-                transform.rotation = rotation;
+                var offsetRotation = rotation.eulerAngles;
+                offsetRotation = new Vector3(offsetRotation.x, offsetRotation.y + offsetRotationY, offsetRotation.z);
+                transform.rotation = Quaternion.Euler(offsetRotation);
             }
         }
     }
