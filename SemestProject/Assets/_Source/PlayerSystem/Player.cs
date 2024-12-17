@@ -81,6 +81,10 @@ namespace PlayerSystem
             {
                 weapon.SetActive(true);
             }
+            else
+            {
+                weapon.SetActive(false);
+            }
         }
 
         public void TakeDamage(int damage)

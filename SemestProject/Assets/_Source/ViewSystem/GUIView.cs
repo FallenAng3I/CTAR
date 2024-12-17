@@ -6,6 +6,7 @@ namespace ViewSystem
 {
     public class GUIView : MonoBehaviour
     {
+        public GameObject image;
         public TMP_Text ammoView;     // Отображение патронов в магазине
         public TMP_Text maxAmmoView;  // Отображение патронов в резерве 
         public Rifle weapon;
@@ -14,11 +15,13 @@ namespace ViewSystem
         {
             if (weapon.enabled)
             {
+                image.SetActive(true);
                 UpdateAmmoDisplay();
                 SetAmmoDisplayActive(true);
             }
             else
             {
+                image.SetActive(false);
                 SetAmmoDisplayActive(false);
             }
         }
