@@ -31,6 +31,8 @@ namespace EnemySystem
 
         private void RotateTowardsPlayer()
         {
+            animator.SetBool("isAtacking", true);
+            
             Vector3 direction = (_player.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * speed);

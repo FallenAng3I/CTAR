@@ -2251,8 +2251,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3234591156052614778}
-  - component: {fileID: 1331315142029223448}
   - component: {fileID: 6669804348884267858}
+  - component: {fileID: 1331315142029223448}
   - component: {fileID: 4935761642578397025}
   - component: {fileID: 7711991019617425227}
   m_Layer: 7
@@ -2281,6 +2281,25 @@ Transform:
   - {fileID: 5331255307446365718}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &6669804348884267858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225358219856069485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f89f5ce8de4e94d8fd1f900efdb7c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
+  damage: 1
+  speed: 5
+  detectionRange: 20
+  player: {fileID: 0}
+  attackRange: 2.5
+  attackCooldown: 3
 --- !u!95 &1331315142029223448
 Animator:
   serializedVersion: 5
@@ -2302,25 +2321,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6669804348884267858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8225358219856069485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4f89f5ce8de4e94d8fd1f900efdb7c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 2
-  damage: 1
-  speed: 5
-  detectionRange: 20
-  player: {fileID: 0}
-  attackRange: 2.5
-  attackCooldown: 3
 --- !u!195 &4935761642578397025
 NavMeshAgent:
   m_ObjectHideFlags: 0

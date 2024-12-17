@@ -1,4 +1,3 @@
-using System;
 using InteractSystem;
 using UnityEngine;
 

@@ -40,6 +40,7 @@ namespace EnemySystem
         
         private void MoveTowardsPlayer()
         {
+            animator.SetBool("isAtacking", true);
             agent.SetDestination(_player.position);
         }
         
