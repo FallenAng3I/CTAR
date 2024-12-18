@@ -40,7 +40,7 @@ namespace EnemySystem
         
         private void MoveTowardsPlayer()
         {
-            animator.SetBool("isAtacking", true);
+            animator.SetBool("isAttacking", true);
             agent.SetDestination(_player.position);
         }
         
@@ -60,6 +60,8 @@ namespace EnemySystem
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, explosionRange);
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(transform.position, detectionRange);
         }
     }
 }

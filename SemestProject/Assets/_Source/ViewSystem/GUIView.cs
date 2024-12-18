@@ -6,30 +6,32 @@ namespace ViewSystem
 {
     public class GUIView : MonoBehaviour
     {
-        public GameObject image;
+        public GameObject weapon;
+        public GameObject ammoImage;
         public TMP_Text ammoView;     // Отображение патронов в магазине
         public TMP_Text maxAmmoView;  // Отображение патронов в резерве 
-        public Rifle weapon;
+        public Rifle rifle;
 
         private void Update()
         {
-            if (weapon.enabled)
+            if (rifle.enabled)
             {
-                image.SetActive(true);
+                weapon.SetActive(true);
+                ammoImage.SetActive(true);
                 UpdateAmmoDisplay();
                 SetAmmoDisplayActive(true);
             }
             else
             {
-                image.SetActive(false);
+                weapon.SetActive(false);
                 SetAmmoDisplayActive(false);
             }
         }
 
         private void UpdateAmmoDisplay()
         {
-            ammoView.text = "" + weapon.magazineAmmo;
-            maxAmmoView.text = "" + weapon.reserveAmmo;
+            ammoView.text = "" + rifle.magazineAmmo;
+            maxAmmoView.text = "" + rifle.reserveAmmo;
         }
 
         private void SetAmmoDisplayActive(bool isActive)

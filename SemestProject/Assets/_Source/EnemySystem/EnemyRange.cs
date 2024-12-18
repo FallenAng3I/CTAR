@@ -77,6 +77,8 @@ namespace EnemySystem
             Gizmos.DrawWireSphere(transform.position, attackRange);
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(transform.position, stopRange);
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(transform.position, detectionRange);
         }
     }
 }

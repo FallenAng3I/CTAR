@@ -5,12 +5,12 @@ namespace MenuManager
 {
     public class MainMenu : MonoBehaviour
     {
-        public void StartGame()
+        public void StartTutorial()
         {
             SceneManager.LoadScene("Tutorial_Level");
         }
 
-        public void StartLevel1()
+        public void StartGame()
         {
             SceneManager.LoadScene("Level_1");
         }

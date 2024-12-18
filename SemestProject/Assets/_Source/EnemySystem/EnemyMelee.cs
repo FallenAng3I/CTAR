@@ -51,14 +51,16 @@ namespace EnemySystem
         
         private void MoveTowardsPlayer()
         {
-            animator.SetBool("isAtacking", true);
+            animator.SetBool("isAttacking", true);
             agent.SetDestination(_player.position);
         }
         
         private void OnDrawGizmosSelected()
         {
-            Gizmos.color = Color.green;
+            Gizmos.color = Color.cyan;
             Gizmos.DrawWireSphere(transform.position, attackRange);
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(transform.position, detectionRange);
         }
     }
 }

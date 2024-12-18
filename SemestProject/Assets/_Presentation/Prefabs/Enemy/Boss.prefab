@@ -1029,9 +1029,9 @@ MonoBehaviour:
   detectionRange: 20
   player: {fileID: 0}
   attackRange: 20
-  cooldown: 3
-  shots: 3
-  fireRate: 4
+  fireRate: 5
+  burstDuration: 5
+  reloadTime: 3
   shootPivot: {fileID: 2576167563643802860}
   projectilePrefab: {fileID: 3958407357650208336, guid: 4d1d519b65b984d46adb2ad699377d30, type: 3}
   projectile: {fileID: 1445246017222486068, guid: 4d1d519b65b984d46adb2ad699377d30, type: 3}
