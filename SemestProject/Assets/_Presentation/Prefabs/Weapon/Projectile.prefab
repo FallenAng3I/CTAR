@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4657549240690106394}
   - component: {fileID: 919039266630701009}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 5415100502714619844}
   - component: {fileID: 3322791223566009497}
   - component: {fileID: 2875953406054454562}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
