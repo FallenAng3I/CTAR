@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using WeaponSystem;
 
@@ -8,7 +9,7 @@ namespace InteractSystem
         public int ammoToAdd = 20;   //Сколько патронов мы будем получать при повторном подборе оружия.
 
         public Rifle rifle;
-        public GameObject weaponView;
+        [CanBeNull] public GameObject weaponView;
 
         public void Interact()
         {

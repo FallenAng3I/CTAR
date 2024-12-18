@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6307547989968563654}
-  - component: {fileID: 2532558402271785355}
   - component: {fileID: 8360043488463840281}
+  - component: {fileID: 2532558402271785355}
   m_Layer: 0
-  m_Name: SceneTrigger
+  m_Name: ExitLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,6 +33,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8360043488463840281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3859291250156023033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9543770f93c98145b75154fa755b346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: 
+  fadeDuration: 3
+  fadeImage: {fileID: 0}
+  player: {fileID: 0}
 --- !u!135 &2532558402271785355
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -54,19 +70,3 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8360043488463840281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3859291250156023033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9543770f93c98145b75154fa755b346, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetScene: 
-  fadeDuration: 3
-  fadeImage: {fileID: 0}
-  player: {fileID: 0}

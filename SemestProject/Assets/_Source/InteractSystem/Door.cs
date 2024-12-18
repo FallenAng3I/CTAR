@@ -7,10 +7,6 @@ namespace InteractSystem
         [SerializeField] private Animator myDoor;
         [SerializeField] private bool isOpen;
 
-        private void Start()
-        {
-        }
-
         public void Interact()
         {
             switch (isOpen)
