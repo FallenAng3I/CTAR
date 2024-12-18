@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5753ead43823c445911986305f8258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoToAdd: 20
+  ammoToAdd: 60
   rifle: {fileID: 0}
   weaponView: {fileID: 0}
 --- !u!65 &258331624151397209
