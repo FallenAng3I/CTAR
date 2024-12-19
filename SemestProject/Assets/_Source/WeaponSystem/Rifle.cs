@@ -1,11 +1,13 @@
+using System;
 using System.Collections;
+using SoundSystem;
 using UnityEngine;
 
 namespace WeaponSystem
 {
     public class Rifle : MonoBehaviour
     {
-        [Header("AKS-74U Config")]
+        [Header("Weapon Config")]
         public int damage;              // Урон                         
         public float fireRate;          // Скорострельность             
         public int magazineAmmo;        // Число патронов в магазине    
@@ -13,16 +15,22 @@ namespace WeaponSystem
         public int reserveAmmo;         // Число патронов в резерве     
         public int maxReserveAmmo;      // Максимум патронов в резерве  
         public float reloadTime;        // Скорость перезарядки         
+
+        [Header("Weapon Sounds")]
+        [SerializeField] private AudioClip shoot;
+        [SerializeField] private AudioClip reload;
+        [SerializeField] private AudioClip empty;
         
         public bool canShoot;
         public bool isReloading;
+        
         private float _nextFireTime;
         
         [SerializeField] private GameObject bulletPrefab;
         [SerializeField] private Transform shootPivot;
         [SerializeField] private Bullet bullet;
 
-        public void Start()
+        private void Update()
         {
         }
 
@@ -41,13 +49,14 @@ namespace WeaponSystem
                     
                     Rigidbody bulletRb = projectile.GetComponent<Rigidbody>();
                     bulletRb.velocity = projectile.transform.forward * bullet.speed;
+                    AudioManager.Instance.PlaySound(shoot);
 
                     magazineAmmo--;
                 }
             }
             else
             {
-                // Звук пустой обоймы
+                
             }
         }
 
@@ -61,6 +70,7 @@ namespace WeaponSystem
         private IEnumerator ReloadCoroutine()
         {
             isReloading = true;
+            AudioManager.Instance.PlaySound(reload);
 
             yield return new WaitForSeconds(reloadTime);
 
