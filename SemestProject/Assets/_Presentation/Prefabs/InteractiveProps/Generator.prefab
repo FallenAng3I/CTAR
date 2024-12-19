@@ -48,6 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a0be4370c179cb4894a09c755e0afb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  requiredCanisters: 6
+  questProgressText: {fileID: 0}
+  completeColor: {r: 0.21960786, g: 0.82745105, b: 0, a: 1}
 --- !u!33 &9009992404262886262
 MeshFilter:
   m_ObjectHideFlags: 0
