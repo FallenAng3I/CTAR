@@ -42,14 +42,14 @@ namespace PlayerSystem
                     weapon.canShoot = true;
                     
                     Vector2 hotSpot = new Vector2(5f, 5f);
-                    Cursor.SetCursor(cursorSprite, hotSpot, CursorMode.Auto);
+                    //Cursor.SetCursor(cursorSprite, hotSpot, CursorMode.Auto);
                 }
                 else
                 {
                     weapon.canShoot = false;
                     
                     Vector2 hotSpot = new Vector2(5f, 5f);
-                    Cursor.SetCursor(null, hotSpot, CursorMode.Auto);
+                    //Cursor.SetCursor(null, hotSpot, CursorMode.Auto);
                 }
             }
         }        
