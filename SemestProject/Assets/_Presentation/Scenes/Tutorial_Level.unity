@@ -13712,9 +13712,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1229724927}
-        m_TargetAssemblyTypeName: ViewSystem.DeathScreenView, Assembly-CSharp
-        m_MethodName: Restart
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerSystem.CheckpointManager, Assembly-CSharp
+        m_MethodName: Respawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23269,6 +23269,10 @@ PrefabInstance:
     - target: {fileID: 8221566973342253679, guid: ebcb142f767895347a78f6b6cd8832c9, type: 3}
       propertyPath: m_Name
       value: DialogueTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 8221566973342253679, guid: ebcb142f767895347a78f6b6cd8832c9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -43433,7 +43437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &2010067642
 SphereCollider:
   m_ObjectHideFlags: 0
