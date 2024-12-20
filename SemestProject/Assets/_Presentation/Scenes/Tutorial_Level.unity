@@ -23224,7 +23224,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6401223130616552941, guid: ebcb142f767895347a78f6b6cd8832c9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6401223130616552941, guid: ebcb142f767895347a78f6b6cd8832c9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -23272,7 +23272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8221566973342253679, guid: ebcb142f767895347a78f6b6cd8832c9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42686,7 +42686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8546c7a4fc64a6b41ba242ac12084240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundtrack: {fileID: 0}
+  soundtrack: {fileID: 8300000, guid: 9631808f3b91ca24e8b8fbf297bf28d3, type: 3}
 --- !u!1 &1934525694
 GameObject:
   m_ObjectHideFlags: 0
@@ -43437,7 +43437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &2010067642
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -43468,7 +43468,7 @@ Transform:
   m_GameObject: {fileID: 2010067641}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -46257,7 +46257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6307547989968563654, guid: 5c722a98331e76f4bb5fadee715f6d12, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 44
+      value: 45.5
       objectReference: {fileID: 0}
     - target: {fileID: 6307547989968563654, guid: 5c722a98331e76f4bb5fadee715f6d12, type: 3}
       propertyPath: m_LocalRotation.w

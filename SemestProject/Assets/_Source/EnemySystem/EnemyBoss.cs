@@ -14,6 +14,7 @@ namespace EnemySystem
         public Transform shootPivot;
         public GameObject projectilePrefab;
         public Projectile projectile;
+        public GameObject epilogue;
 
         private bool _isReloading;
         private bool _isShooting;
@@ -72,6 +73,12 @@ namespace EnemySystem
 
             Rigidbody bulletRb = projectiles.GetComponent<Rigidbody>();
             bulletRb.velocity = projectiles.transform.forward * projectile.speed;
+        }
+        
+        protected override void Death()
+        {
+            epilogue.SetActive(true);
+            Destroy(gameObject);
         }
 
         private void OnDrawGizmosSelected()
