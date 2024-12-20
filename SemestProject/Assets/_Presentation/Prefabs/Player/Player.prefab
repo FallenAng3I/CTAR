@@ -545,10 +545,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   speed: 7
-  interactRadius: 4
+  interactAreaSize: {x: 2, y: 5.5, z: 2.5}
   keys: 0
   isDead: 0
   weapon: {fileID: 3171938861754647436}
+  highlightSprite: {fileID: 0}
   rifle: {fileID: 4115614258121465673}
   deathScreenView: {fileID: 0}
 --- !u!114 &4115614258121465673

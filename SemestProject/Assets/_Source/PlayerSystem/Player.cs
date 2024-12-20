@@ -9,11 +9,12 @@ namespace PlayerSystem
     {
         public int health;              // Здоровье игрока  
         public float speed;             // Скорость игрока  
-        public float interactRadius;    // Радиус для взаимодействия с предметами  
+        public Vector3 interactAreaSize = new Vector3(1f, 1f, 1f);
 
         public int keys = 0;
         public bool isDead;             
         public GameObject weapon;
+        public GameObject highlightSprite;
         
         public Rifle rifle;
         public DeathScreenView deathScreenView;
@@ -23,6 +24,7 @@ namespace PlayerSystem
         {
             WeaponView();
             ReadSpeed();
+            CheckForInteractable();
         }
 
         private void ReadSpeed()
@@ -46,14 +48,14 @@ namespace PlayerSystem
                 _currentCanister = null;
                 return;
             }
-            
+
             var playerPosition = transform.position;
             var minDistance = Mathf.Infinity;
             IInteractable closestInteractable = null;
 
             var hitColliders = Physics.OverlapBox(
-                playerPosition + transform.forward * interactRadius / 2,
-                new Vector3(interactRadius, interactRadius, interactRadius)
+                playerPosition + transform.forward * interactAreaSize.z / 2,
+                interactAreaSize / 2
             );
 
             foreach (var hitCollider in hitColliders)
@@ -68,12 +70,34 @@ namespace PlayerSystem
 
             if (closestInteractable == null) return;
             closestInteractable.Interact();
-                
+
             if (closestInteractable is Canister canister)
             {
                 _currentCanister = canister;
             }
         }
+        
+        private void CheckForInteractable()
+        {
+            var playerPosition = transform.position;
+
+            var hitColliders = Physics.OverlapBox(
+                playerPosition + transform.forward * interactAreaSize.z / 2,
+                interactAreaSize / 2
+            );
+
+            foreach (var hitCollider in hitColliders)
+            {
+                if (hitCollider.gameObject.layer == LayerMask.NameToLayer("Interactable"))
+                {
+                    highlightSprite.SetActive(true);
+                    return;
+                }
+            }
+
+            highlightSprite.SetActive(false);
+        }
+
 
         private void WeaponView()
         {
@@ -112,8 +136,10 @@ namespace PlayerSystem
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.green;
-            Vector3 size = new Vector3(interactRadius, interactRadius, interactRadius);
-            Gizmos.DrawWireCube(transform.position + transform.forward * interactRadius / 2, size);
+            Gizmos.DrawWireCube(
+                transform.position + transform.forward * interactAreaSize.z / 2, 
+                interactAreaSize
+            );
         }
     }
 }
