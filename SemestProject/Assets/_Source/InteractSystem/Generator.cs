@@ -8,7 +8,8 @@ namespace InteractSystem
     {
         [Header("Quest Settings")]
         [SerializeField] private int requiredCanisters = 5; // Количество канистр для завершения
-        private int collectedCanisters = 0;                // Собранные канистры
+        private int _collectedCanisters = 0;                // Собранные канистры
+        [SerializeField] private Player _player;
 
         [Header("UI Settings")]
         [SerializeField] private TMP_Text questProgressText; // Текст для отображения прогресса
@@ -25,10 +26,10 @@ namespace InteractSystem
             if (canister == null) return;
 
             Destroy(other.gameObject);
-            collectedCanisters++;
+            _collectedCanisters++;
             UpdateQuestUI();
 
-            if (collectedCanisters >= requiredCanisters)
+            if (_collectedCanisters >= requiredCanisters)
             {
                 OnQuestComplete();
             }
@@ -36,10 +37,10 @@ namespace InteractSystem
 
         private void UpdateQuestUI()
         {
-            questProgressText.text = $"{collectedCanisters} / {requiredCanisters}";
+            questProgressText.text = $"{_collectedCanisters} / {requiredCanisters}";
 
             // Если квест выполнен, меняем цвет текста
-            if (collectedCanisters >= requiredCanisters)
+            if (_collectedCanisters >= requiredCanisters)
             {
                 questProgressText.color = completeColor;
             }
@@ -47,8 +48,7 @@ namespace InteractSystem
 
         private void OnQuestComplete()
         {
-            Player player = GetComponent<Player>();
-            player.keys++;
+            _player.keys++;
         }
     }
 }
